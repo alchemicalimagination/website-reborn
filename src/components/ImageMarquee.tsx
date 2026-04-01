@@ -14,7 +14,7 @@ const ImageMarquee = () => {
         className="flex gap-4 w-max animate-hm-scroll"
       >
         {images.map((img, i) => (
-          <div key={i} className="w-[140px] sm:w-[180px] h-[100px] sm:h-[130px] rounded-[28px] flex-shrink-0 overflow-hidden relative">
+          <div key={i} className="w-[140px] sm:w-[180px] h-[100px] sm:h-[130px] rounded-full flex-shrink-0 overflow-hidden relative">
             <img src={img} alt="" className="w-full h-full object-cover" loading="lazy" />
           </div>
         ))}
