@@ -183,15 +183,6 @@
   50% { transform: rotateX(-20deg) rotateY(30deg) translateY(-16px); }
 }
 
-.animate-scroll-left {
-  animation: scrollLeft 25s linear infinite;
-}
-.animate-scroll-right {
-  animation: scrollRight 25s linear infinite;
-}
-.animate-hm-scroll {
-  animation: hmScroll 20s linear infinite;
-}
 .animate-cube-float {
   animation: cpFloat 6s ease-in-out infinite;
 }
