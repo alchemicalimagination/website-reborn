@@ -79,7 +79,24 @@
   }
 }
 
-/* Marquee animations */
+/* Text Marquee */
+.marquee-inner {
+  font-family: 'Kode Mono', 'Courier New', monospace;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: white;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.marquee-left {
+  display: inline-flex;
+  animation: scrollLeft 25s linear infinite;
+}
+.marquee-right {
+  display: inline-flex;
+  animation: scrollRight 25s linear infinite;
+}
 @keyframes scrollLeft {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -88,16 +105,76 @@
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
+
+/* Image Marquee (horizontal) */
+.hmarquee {
+  overflow: hidden;
+  padding: 20px 0;
+  background: transparent;
+}
+.hm-track {
+  display: flex;
+  gap: 16px;
+  animation: hmScroll 20s linear infinite;
+  width: max-content;
+}
 @keyframes hmScroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+.hm-thumb {
+  width: 180px;
+  height: 130px;
+  border-radius: 28px;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+}
+.hm-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hm-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.15);
+}
+.hm-tri {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent rgba(255,255,255,0.9);
+  margin-left: 3px;
+}
+
+/* Hero vertical marquee */
+.hero-vmarquee {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: scrollVertical 15s linear infinite;
+}
+.hm-thumb-v {
+  width: 130px;
+  height: 90px;
+  border-radius: 18px;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+}
+.hm-thumb-v img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 @keyframes scrollVertical {
   0% { transform: translateY(0); }
   100% { transform: translateY(-50%); }
-}
-.animate-scroll-vertical {
-  animation: scrollVertical 15s linear infinite;
 }
 
 /* 3D Cube */
