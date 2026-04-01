@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div
-      className="p-2.5 pb-2.5"
+      className="p-1.5 sm:p-2 md:p-2.5 pb-1.5 sm:pb-2 md:pb-2.5"
       style={{
         background: "linear-gradient(to bottom, #ffffff 0%, #ffffff 25%, #888888 50%, #000000 70%, #000000 100%)",
       }}

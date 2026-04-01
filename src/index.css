@@ -63,8 +63,20 @@
 
 /* Section styling */
 .section-rounded {
-  border-radius: 40px;
+  border-radius: 20px;
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .section-rounded {
+    border-radius: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-rounded {
+    border-radius: 40px;
+  }
 }
 
 /* Marquee animations */

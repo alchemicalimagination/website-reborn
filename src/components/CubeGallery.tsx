@@ -87,20 +87,22 @@ const CubeGallery = () => {
     window.scrollTo({ top: sT + (idx / 5) * sH, behavior: "smooth" });
   };
 
+  const cubeSize = "min(50vw, 50vh, 460px)";
+
   return (
     <div ref={outerRef} className="relative rounded-section" style={{ height: "600vh" }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden rounded-section bg-cream flex items-center justify-center" style={{ perspective: "1100px" }}>
         {/* HUD */}
-        <div className="absolute top-8 right-8 z-10 text-right font-mono text-[0.65rem] tracking-[0.15em] text-foreground/35 uppercase">
+        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-10 text-right font-mono text-[0.6rem] sm:text-[0.65rem] tracking-[0.15em] text-foreground/35 uppercase">
           <div>{String(progress).padStart(3, "0")}%</div>
-          <div className="w-[7.5rem] h-px bg-foreground/15 my-2 ml-auto relative overflow-hidden">
+          <div className="w-16 sm:w-[7.5rem] h-px bg-foreground/15 my-2 ml-auto relative overflow-hidden">
             <div className="absolute inset-0 bg-gold transition-all" style={{ width: `${progress}%` }} />
           </div>
-          <div className="text-[0.6rem] text-gold">{NAMES[activeIdx]}</div>
+          <div className="text-[0.55rem] sm:text-[0.6rem] text-gold">{NAMES[activeIdx]}</div>
         </div>
 
         {/* Dots */}
-        <div className="absolute left-8 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-3">
+        <div className="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-2.5 sm:gap-3">
           {NAMES.map((_, i) => (
             <button
               key={i}
@@ -113,11 +115,11 @@ const CubeGallery = () => {
         </div>
 
         {/* Caption */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-center pointer-events-none">
-          <div className="text-[0.58rem] tracking-[0.28em] text-gold uppercase mb-0.5">
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 text-center pointer-events-none">
+          <div className="text-[0.5rem] sm:text-[0.58rem] tracking-[0.28em] text-gold uppercase mb-0.5">
             {String(activeIdx + 1).padStart(2, "0")}
           </div>
-          <div className="font-mono text-[clamp(1.8rem,5vw,3.5rem)] tracking-[0.08em] text-foreground/20 leading-none">
+          <div className="font-mono text-[clamp(1.4rem,5vw,3.5rem)] tracking-[0.08em] text-foreground/20 leading-none">
             {NAMES[activeIdx]}
           </div>
         </div>
@@ -127,22 +129,20 @@ const CubeGallery = () => {
           <div
             className="relative preserve-3d"
             style={{
-              width: "min(60vw, 60vh, 460px)",
-              height: "min(60vw, 60vh, 460px)",
+              width: cubeSize,
+              height: cubeSize,
               transform: cubeTransform,
               willChange: "transform",
-              // @ts-expect-error CSS custom property
-              "--s": "min(60vw, 60vh, 460px)",
             }}
           >
             {["front", "back", "right", "left", "top", "bottom"].map((face, i) => {
               const transforms: Record<string, string> = {
-                front: "translateZ(calc(min(60vw, 60vh, 460px) / 2))",
-                back: "rotateY(180deg) translateZ(calc(min(60vw, 60vh, 460px) / 2))",
-                right: "rotateY(90deg) translateZ(calc(min(60vw, 60vh, 460px) / 2))",
-                left: "rotateY(-90deg) translateZ(calc(min(60vw, 60vh, 460px) / 2))",
-                top: "rotateX(-90deg) translateZ(calc(min(60vw, 60vh, 460px) / 2))",
-                bottom: "rotateX(90deg) translateZ(calc(min(60vw, 60vh, 460px) / 2))",
+                front: `translateZ(calc(${cubeSize} / 2))`,
+                back: `rotateY(180deg) translateZ(calc(${cubeSize} / 2))`,
+                right: `rotateY(90deg) translateZ(calc(${cubeSize} / 2))`,
+                left: `rotateY(-90deg) translateZ(calc(${cubeSize} / 2))`,
+                top: `rotateX(-90deg) translateZ(calc(${cubeSize} / 2))`,
+                bottom: `rotateX(90deg) translateZ(calc(${cubeSize} / 2))`,
               };
               return (
                 <div
@@ -154,11 +154,11 @@ const CubeGallery = () => {
                     <img
                       src={images[i]}
                       alt={face}
-                      className="absolute object-cover rounded-[14px]"
+                      className="absolute object-cover rounded-[10px] sm:rounded-[14px]"
                       style={{
-                        inset: "24px",
-                        width: "calc(100% - 48px)",
-                        height: "calc(100% - 48px)",
+                        inset: "16px",
+                        width: "calc(100% - 32px)",
+                        height: "calc(100% - 32px)",
                         boxShadow: "-14px 10px 32px rgba(0,0,0,0.25)",
                       }}
                       loading="lazy"
@@ -170,19 +170,19 @@ const CubeGallery = () => {
           </div>
         </div>
 
-        {/* Cards */}
+        {/* Cards - hidden on small mobile, shown from sm up */}
         {CARDS.map((card, i) => (
           <div
             key={i}
-            className={`absolute max-w-[22rem] p-[2rem_1.75rem] cg-card-glass rounded-3xl z-[5] transition-all duration-500 ${
-              card.side === "right" ? "right-12 left-auto text-right" : "left-12"
+            className={`absolute max-w-[16rem] sm:max-w-[22rem] p-4 sm:p-[2rem_1.75rem] cg-card-glass rounded-2xl sm:rounded-3xl z-[5] transition-all duration-500 hidden sm:block ${
+              card.side === "right" ? "right-4 sm:right-12 left-auto text-right" : "left-4 sm:left-12"
             } ${activeIdx === i ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"}`}
             style={{ top: "50%", transform: activeIdx === i ? "translateY(-50%)" : "translateY(calc(-50% + 16px))" }}
           >
-            <div className={`w-12 h-px bg-gold mb-4 ${card.side === "right" ? "ml-auto" : ""}`} />
-            <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-gold mb-4">{card.tag}</div>
-            <div className="font-mono text-[clamp(1.8rem,3vw,3rem)] font-bold leading-[0.9] text-dark mb-4 whitespace-pre-line">{card.title}</div>
-            <p className="text-[0.78rem] leading-[1.75] text-foreground/60">{card.body}</p>
+            <div className={`w-10 sm:w-12 h-px bg-gold mb-3 sm:mb-4 ${card.side === "right" ? "ml-auto" : ""}`} />
+            <div className="font-mono text-[0.55rem] sm:text-[0.6rem] tracking-[0.25em] uppercase text-gold mb-3 sm:mb-4">{card.tag}</div>
+            <div className="font-mono text-[clamp(1.4rem,3vw,3rem)] font-bold leading-[0.9] text-dark mb-3 sm:mb-4 whitespace-pre-line">{card.title}</div>
+            <p className="text-[0.7rem] sm:text-[0.78rem] leading-[1.75] text-foreground/60">{card.body}</p>
           </div>
         ))}
       </div>
