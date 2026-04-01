@@ -1,8 +1,13 @@
+import card1 from "@/assets/card-1.png";
+import card2 from "@/assets/card-2.png";
+import card3 from "@/assets/card-3.png";
+import card4 from "@/assets/card-4.png";
+
 const projects = [
-  { name: "Brand Alchemy", cat: "Brand Identity", gradient: "linear-gradient(155deg, #1a1228, #2d1a38)" },
-  { name: "Visual Echo", cat: "Motion Design", gradient: "linear-gradient(155deg, #2a1010, #3c1f10)" },
-  { name: "Nature Lens", cat: "Photography", gradient: "linear-gradient(155deg, #101a10, #0a1a20)" },
-  { name: "Golden Hour", cat: "Cinematography", gradient: "linear-gradient(155deg, #281a08, #382808)" },
+  { name: "Brand Alchemy", cat: "Brand Identity", img: card1 },
+  { name: "Visual Echo", cat: "Motion Design", img: card2 },
+  { name: "Nature Lens", cat: "Photography", img: card3 },
+  { name: "Golden Hour", cat: "Cinematography", img: card4 },
 ];
 
 const ProjectsSection = () => {
@@ -14,7 +19,8 @@ const ProjectsSection = () => {
             key={i}
             className="flex-shrink-0 w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[24px] sm:rounded-[32px] overflow-hidden relative cursor-pointer transition-transform hover:-translate-y-1.5"
           >
-            <div className="absolute inset-0" style={{ background: p.gradient }} />
+            <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <div className="absolute inset-0 bg-black/20" />
             <div className="absolute bottom-5 sm:bottom-[26px] left-4 right-4 sm:left-[22px] sm:right-[22px] bg-[rgba(18,14,10,0.76)] backdrop-blur-[18px] rounded-[14px] sm:rounded-[18px] p-[18px_20px] sm:p-[22px_24px] border border-primary-foreground/[0.07]">
               <div className="font-mono text-[8px] sm:text-[9px] tracking-[0.22em] text-primary-foreground/45 uppercase mb-1.5 sm:mb-2">{p.cat}</div>
               <div className="font-mono text-[18px] sm:text-[22px] font-bold text-primary-foreground uppercase mb-3 sm:mb-4">{p.name}</div>
