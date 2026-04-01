@@ -1,4 +1,9 @@
 import heroBg from "@/assets/hero-bg-new.png";
+import cube1 from "@/assets/cube-1.jpg";
+import cube2 from "@/assets/cube-2.jpg";
+import cube3 from "@/assets/cube-3.jpg";
+
+const heroThumbs = [cube1, cube2, cube3];
 
 const HeroSection = () => {
   return (
@@ -16,8 +21,23 @@ const HeroSection = () => {
           Alchemical<br />Imagination<br />Studio
         </h1>
         <p className="font-mono text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.28em] text-primary-foreground/70 uppercase">
-          Where Vision Becomes Reality
+          Design Studio · London
         </p>
+      </div>
+      {/* Vertical thumbnail strip — bottom right */}
+      <div className="hidden md:flex absolute bottom-[40px] right-[36px] z-[5] flex-col gap-3">
+        {heroThumbs.map((img, i) => (
+          <div key={i} className="w-[120px] h-[80px] rounded-2xl overflow-hidden relative cursor-pointer group">
+            <img src={img} alt="" className="w-full h-full object-cover" loading="lazy" />
+            <div className="absolute inset-0 bg-foreground/20 flex items-center justify-center">
+              <div className="w-7 h-7 rounded-full bg-primary-foreground/30 backdrop-blur-sm flex items-center justify-center">
+                <svg width="10" height="12" viewBox="0 0 10 12" fill="none" className="ml-0.5">
+                  <path d="M1 1L9 6L1 11V1Z" fill="white" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
