@@ -1,9 +1,8 @@
 import FloatingNav from "@/components/FloatingNav";
 import HeroSection from "@/components/HeroSection";
 import TextMarquee from "@/components/TextMarquee";
-import CraftSection from "@/components/CraftSection";
-import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/AboutSection";
+import ProjectsSection from "@/components/ProjectsSection";
 import ServicesSection from "@/components/ServicesSection";
 import CubeGallery from "@/components/CubeGallery";
 import ContactSection from "@/components/ContactSection";
@@ -22,7 +21,7 @@ const Index = () => {
         <HeroSection />
         <TextMarquee />
         <AboutSection />
-        <CraftSection />
+        <TextMarquee />
         <CubeGallery />
         <ProjectsSection />
         <ServicesSection />
