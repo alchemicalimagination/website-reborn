@@ -1,8 +1,8 @@
-import aboutBg from "@/assets/about-bg.jpg";
+import aboutBg from "@/assets/about-bg.png";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-rounded relative h-auto min-h-[480px] sm:h-[75vh] md:h-[88vh] md:min-h-[520px] bg-sage">
+    <section id="about" className="section-rounded relative h-auto min-h-[480px] sm:h-[75vh] md:h-[88vh] md:min-h-[520px] bg-sage overflow-hidden">
       <img src={aboutBg} alt="About us" className="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" width={1920} height={1080} />
       <div className="absolute inset-0 bg-[rgba(60,80,70,0.15)]" />
       <div className="relative z-[2] flex flex-col md:grid md:grid-cols-[280px_1fr_320px] items-start md:items-center p-6 sm:p-8 md:p-[52px] gap-6 md:gap-4 h-full">
