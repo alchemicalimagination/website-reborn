@@ -1,7 +1,9 @@
+import contactBg from "@/assets/contact-bg.png";
+
 const ContactSection = () => {
   return (
     <section id="contact" className="section-rounded relative h-auto min-h-[480px] sm:min-h-[520px] md:h-[88vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#c03040] via-[#281030_35%,#102840_65%] to-[#3040c0]" />
+      <img src={contactBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" />
       <div className="absolute inset-0 bg-foreground/40" />
       <div className="relative z-[2] text-center max-w-[680px] w-full px-5 sm:px-10 py-12 sm:py-20">
         <h2 className="font-mono text-[clamp(32px,10vw,90px)] font-bold text-primary-foreground uppercase mb-3 sm:mb-4 tracking-[0.02em]">
