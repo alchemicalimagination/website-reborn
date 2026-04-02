@@ -1,3 +1,5 @@
+import logo from '@/assets/logo.png';
+
 const FloatingNav = () => {
   return (
     <nav className="fixed bottom-[34px] left-1/2 -translate-x-1/2 z-[9999] flex items-center glass rounded-[100px] py-4 px-3 whitespace-nowrap shadow-lg">
