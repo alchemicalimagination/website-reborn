@@ -174,7 +174,7 @@ const CubeGallery = () => {
         {CARDS.map((card, i) => (
           <div
             key={i}
-            className={`absolute max-w-[16rem] sm:max-w-[22rem] p-4 sm:p-[2rem_1.75rem] cg-card-glass rounded-2xl sm:rounded-3xl z-[5] transition-all duration-500 hidden sm:block ${
+            className={`absolute max-w-[16rem] sm:max-w-[22rem] p-4 sm:p-[2rem_1.75rem] cg-card-glass rounded-3xl sm:rounded-[36px] z-[5] transition-all duration-500 hidden sm:block ${
               card.side === "right" ? "right-4 sm:right-12 left-auto text-right" : "left-4 sm:left-12"
             } ${activeIdx === i ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"}`}
             style={{ top: "50%", transform: activeIdx === i ? "translateY(-50%)" : "translateY(calc(-50% + 16px))" }}
