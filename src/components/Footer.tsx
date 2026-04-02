@@ -24,8 +24,7 @@ const Footer = () => {
           {[
             { label: "Home", sup: "" },
             { label: "About", sup: "" },
-            { label: "Projects", sup: "(06)" },
-            { label: "Journal", sup: "(05)" },
+            { label: "Services", sup: "" },
             { label: "Contact us", sup: "" },
           ].map((item) => (
             <li key={item.label}>
@@ -54,10 +53,10 @@ const Footer = () => {
 
       {/* Bottom - Large text + copyright */}
       <div className="mt-auto">
-        <div className="font-mono text-[clamp(28px,5.5vw,90px)] font-medium text-primary-foreground uppercase border-t border-primary-foreground/10 pt-8 sm:pt-10 mb-4 tracking-[0.04em] leading-[1.05] whitespace-nowrap">
+        <div className="font-mono text-[clamp(24px,4.8vw,80px)] font-medium text-primary-foreground uppercase pt-8 sm:pt-10 mb-6 tracking-[0.04em] leading-[1.1]">
           Alchemical Imagination Studio
         </div>
-        <p className="font-mono text-[10px] sm:text-[11px] text-primary-foreground/25 text-center">
+        <p className="font-mono text-[10px] sm:text-[11px] text-primary-foreground/25 text-left mb-2">
           © 2026 Alchemical Imagination Studio. All right reserved.
         </p>
       </div>
