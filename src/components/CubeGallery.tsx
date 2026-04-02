@@ -159,7 +159,7 @@ const CubeGallery = () => {
                         inset: "16px",
                         width: "calc(100% - 32px)",
                         height: "calc(100% - 32px)",
-                        boxShadow: "-14px 10px 32px rgba(0,0,0,0.25)",
+                        boxShadow: "0 20px 50px -12px rgba(0,0,0,0.4), 0 8px 20px -8px rgba(0,0,0,0.2)",
                       }}
                       loading="lazy"
                     />
