@@ -4,10 +4,12 @@ import card3 from "@/assets/card-3.png";
 import card4 from "@/assets/card-4.png";
 
 const projects = [
-  { name: "Brand Alchemy", cat: "Brand Identity", img: card1 },
-  { name: "Visual Echo", cat: "Motion Design", img: card2 },
-  { name: "Nature Lens", cat: "Photography", img: card3 },
-  { name: "Golden Hour", cat: "Cinematography", img: card4 },
+  { name: "UGC", cat: "Content", img: card1 },
+  { name: "CGI", cat: "Visual", img: card2 },
+  { name: "Cinematic Ads", cat: "Campaign", img: card3 },
+  { name: "ASMR", cat: "Sensory", img: card4 },
+  { name: "FOOH", cat: "Fake Out Of Home", img: card1 },
+  { name: "Real Estate", cat: "Timelapse", img: card2 },
 ];
 
 const ProjectsSection = () => {
