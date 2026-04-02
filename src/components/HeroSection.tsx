@@ -29,9 +29,9 @@ const HeroSection = () => {
       {/* Vertical scrolling thumbnail strip — bottom right */}
       <div className="hidden md:block absolute bottom-0 right-[36px] z-[5] h-[320px] overflow-hidden">
         {/* Top fade */}
-        <div className="absolute top-0 left-0 right-0 h-16 z-10 bg-gradient-to-b from-sage/80 to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-20 z-10 bg-gradient-to-b from-sage to-transparent pointer-events-none" />
         {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 z-10 bg-gradient-to-t from-sage/80 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-20 z-10 bg-gradient-to-t from-sage to-transparent pointer-events-none" />
         <div className="hero-vmarquee">
           {[...heroThumbs, ...heroThumbs].map((img, i) => (
             <div key={i} className="hm-thumb-v">
