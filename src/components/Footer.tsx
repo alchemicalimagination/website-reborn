@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-dark section-rounded text-primary-foreground min-h-screen flex flex-col justify-between p-8 sm:p-12 md:p-[80px_64px_40px]">
+    <footer className="bg-dark section-rounded text-primary-foreground min-h-[calc(100vh-1rem)] flex flex-col justify-between p-8 sm:p-12 md:p-[60px_64px_20px]">
       {/* Top content */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.2fr_1fr_0.8fr] gap-10 md:gap-12 pt-8 sm:pt-12">
         {/* Left column */}
@@ -28,7 +28,7 @@ const Footer = () => {
             { label: "Contact us", sup: "" },
           ].map((item) => (
             <li key={item.label}>
-              <a href="#" className="text-[22px] sm:text-[26px] md:text-[28px] text-primary-foreground no-underline py-1.5 block font-normal tracking-[0.01em]">
+              <a href="#" className="font-mono text-[22px] sm:text-[26px] md:text-[28px] text-primary-foreground no-underline py-1.5 block font-normal tracking-[0.01em]">
                 {item.label}
                 {item.sup && <sup className="text-[10px] text-primary-foreground/40 ml-0.5">{item.sup}</sup>}
               </a>
@@ -52,8 +52,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom - Large text + copyright */}
-      <div className="mt-auto">
-        <div className="font-mono text-[clamp(24px,4.8vw,80px)] font-medium text-primary-foreground uppercase pt-8 sm:pt-10 mb-6 tracking-[0.04em] leading-[1.1]">
+      <div className="mt-auto pb-4">
+        <div className="font-mono text-[clamp(24px,4.8vw,80px)] font-medium text-primary-foreground uppercase mb-6 tracking-[0.04em] leading-[1.1] whitespace-nowrap" style={{ paddingBottom: '40px' }}>
           Alchemical Imagination Studio
         </div>
         <p className="font-mono text-[10px] sm:text-[11px] text-primary-foreground/25 text-left mb-2">
