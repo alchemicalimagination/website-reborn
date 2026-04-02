@@ -63,19 +63,19 @@
 
 /* Section styling */
 .section-rounded {
-  border-radius: 36px;
+  border-radius: 44px;
   overflow: hidden;
 }
 
 @media (min-width: 640px) {
   .section-rounded {
-    border-radius: 50px;
+    border-radius: 60px;
   }
 }
 
 @media (min-width: 768px) {
   .section-rounded {
-    border-radius: 60px;
+    border-radius: 72px;
   }
 }
 
