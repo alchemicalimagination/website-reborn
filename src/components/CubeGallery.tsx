@@ -184,7 +184,7 @@ const CubeGallery = () => {
           >
             <div className={`w-10 sm:w-12 h-px bg-gold mb-3 sm:mb-4 ${card.side === "right" ? "ml-auto" : ""}`} />
             <div className="font-mono text-[0.55rem] sm:text-[0.6rem] tracking-[0.25em] uppercase text-gold mb-3 sm:mb-4">{card.tag}</div>
-            <div className="font-mono text-[clamp(1.4rem,3vw,3rem)] font-bold leading-[0.9] text-dark mb-3 sm:mb-4 whitespace-pre-line">{card.title}</div>
+            <div className="font-mono text-[clamp(1.4rem,3vw,3rem)] font-medium leading-[0.9] text-dark mb-3 sm:mb-4 whitespace-pre-line">{card.title}</div>
             <p className="text-[0.7rem] sm:text-[0.78rem] leading-[1.75] text-foreground/60">{card.body}</p>
           </div>
         ))}
