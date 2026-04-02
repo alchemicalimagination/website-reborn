@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 
+
 const NAMES = ["STUDIO", "UGC", "CGI", "CINEMATIC", "ASMR", "LET'S GO"];
 const STOPS = [
   { rx: 90, ry: 0 },
