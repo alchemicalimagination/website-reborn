@@ -156,10 +156,13 @@ const CubeGallery = () => {
                     background: "linear-gradient(to right, #d5d0c8, #ede8e0 40%, #f5f2ed)",
                   }}
                 >
-                  {images[i] && (
-                    <img
-                      src={images[i]}
-                      alt={face}
+                  {videos[i] && (
+                    <video
+                      src={videos[i]}
+                      muted
+                      autoPlay
+                      loop
+                      playsInline
                       className="absolute object-cover rounded-[10px] sm:rounded-[14px]"
                       style={{
                         inset: "16px",
@@ -167,7 +170,6 @@ const CubeGallery = () => {
                         height: "calc(100% - 32px)",
                         boxShadow: "-18px 14px 40px rgba(0,0,0,0.35), -6px 6px 16px rgba(0,0,0,0.15)",
                       }}
-                      loading="lazy"
                     />
                   )}
                 </div>
