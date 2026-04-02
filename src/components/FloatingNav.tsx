@@ -10,7 +10,7 @@ const FloatingNav = () => {
       </a>
       <a
         href="#contact"
-        className="bg-primary-foreground/95 text-dark py-2.5 px-[22px] rounded-[100px] font-mono text-[11px] font-bold tracking-[0.08em] uppercase ml-2 no-underline"
+        className="bg-primary-foreground/95 text-dark py-3.5 px-[22px] rounded-[100px] font-mono text-[11px] font-bold tracking-[0.08em] uppercase ml-2 no-underline"
       >
         Contact
       </a>
