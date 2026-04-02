@@ -90,7 +90,7 @@ const CubeGallery = () => {
   const cubeSize = "min(50vw, 50vh, 460px)";
 
   return (
-    <div ref={outerRef} className="relative section-rounded" style={{ height: "600vh" }}>
+    <div ref={outerRef} className="relative section-rounded" style={{ height: "500vh" }}>
       <div className="sticky top-0 w-full overflow-hidden section-rounded bg-cream flex items-center justify-center" style={{ perspective: "1100px", height: "calc(100vh - 38px)" }}>
         {/* HUD */}
         <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-10 text-right font-mono text-[0.6rem] sm:text-[0.65rem] tracking-[0.15em] text-foreground/35 uppercase">
