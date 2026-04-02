@@ -27,7 +27,7 @@ const HeroSection = () => {
         </p>
       </div>
       {/* Vertical scrolling thumbnail strip — bottom right */}
-      <div className="hidden md:block absolute right-[12px] bottom-[12px] z-[5] h-[430px] overflow-hidden pointer-events-none hero-vmarquee-mask">
+      <div className="hidden md:block absolute right-[12px] bottom-[12px] z-[5] h-[300px] overflow-hidden pointer-events-none hero-vmarquee-mask">
         <div className="hero-vmarquee">
           {[...heroThumbs, ...heroThumbs].map((img, i) => (
             <div key={i} className="hm-thumb-v">
