@@ -84,7 +84,7 @@ const CubeGallery = () => {
     if (!outer) return;
     const sH = outer.offsetHeight - window.innerHeight;
     const sT = outer.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({ top: sT + (idx / 6) * sH, behavior: "smooth" });
+    window.scrollTo({ top: sT + (idx / 5) * sH, behavior: "smooth" });
   };
 
   const cubeSize = "min(50vw, 50vh, 460px)";
