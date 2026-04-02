@@ -1,8 +1,4 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import cube1 from "@/assets/cube-1.jpg";
-import cube2 from "@/assets/cube-2.jpg";
-import cube3 from "@/assets/cube-3.jpg";
-import cube4 from "@/assets/cube-4.jpg";
 
 const NAMES = ["STUDIO", "UGC", "CGI", "CINEMATIC", "ASMR", "LET'S GO"];
 const STOPS = [
@@ -21,7 +17,14 @@ const CARDS = [
   { tag: "ASMR", title: "Sensory\nContent", body: "Immersive audio-visual experiences.", side: "left" },
   { tag: "Let's Go", title: "Start\nYour Project", body: "Ready to create something extraordinary?", side: "right" },
 ];
-const images = [cube1, cube2, cube3, cube4, cube1, cube2];
+const videos = [
+  "/videos/video-1.mp4",
+  "/videos/video-2.mp4",
+  "/videos/video-3.mp4",
+  "/videos/video-4.mp4",
+  "/videos/video-5.mp4",
+  "/videos/video-6.mp4",
+];
 
 const easeIO = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
 
