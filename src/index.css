@@ -115,7 +115,7 @@
 .hm-track {
   display: flex;
   gap: 16px;
-  animation: hmScroll 20s linear infinite;
+  animation: hmScroll 40s linear infinite;
   width: max-content;
 }
 @keyframes hmScroll {
