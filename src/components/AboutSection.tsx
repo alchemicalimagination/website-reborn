@@ -5,8 +5,8 @@ const AboutSection = () => {
     <section id="about" className="section-rounded relative h-auto min-h-[480px] sm:h-[75vh] md:h-[88vh] md:min-h-[520px] bg-sage overflow-hidden">
       <img src={aboutBg} alt="About us" className="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" width={1920} height={1080} />
       <div className="absolute inset-0 bg-[rgba(60,80,70,0.15)]" />
-      <div className="relative z-[2] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 h-full p-6 sm:p-8 md:p-[52px]">
-        {/* Left glass card with label + heading */}
+      <div className="relative z-[2] grid grid-cols-1 md:grid-cols-[280px_1fr_320px] items-center h-full p-6 sm:p-8 md:p-[52px] md:h-[88vh] md:min-h-[520px]">
+        {/* Left glass card */}
         <div className="glass-card rounded-2xl sm:rounded-3xl p-8 sm:p-[44px_38px]">
           <span className="font-mono text-[10px] tracking-[0.2em] text-primary-foreground/55 uppercase block mb-4">
             About Us.25
@@ -15,9 +15,11 @@ const AboutSection = () => {
             ABOUT
           </h2>
         </div>
+        {/* Spacer */}
+        <div />
         {/* Right text */}
-        <div className="max-w-[380px]">
-          <p className="text-sm sm:text-[15px] leading-[1.72] text-primary-foreground/90 font-light">
+        <div>
+          <p className="text-sm sm:text-[14px] leading-[1.72] text-primary-foreground/88 font-light">
             At Alchemical Imagination, we craft designs that don't just look stunning—they create impact. Blending creativity with strategy, we transform ideas into immersive digital experiences that captivate, engage, and convert.
           </p>
         </div>
