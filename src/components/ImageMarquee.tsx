@@ -36,9 +36,6 @@ const ImageMarquee = () => {
             ) : (
               <video src={item.src} muted autoPlay loop playsInline className="w-full h-full object-cover" />
             )}
-            <div className="hm-play">
-              <div className="hm-tri" />
-            </div>
           </div>
         ))}
       </div>
