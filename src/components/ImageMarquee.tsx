@@ -9,7 +9,11 @@ const images = [cube1, cube2, cube3, cube4, heroBg, aboutBg];
 
 const ImageMarquee = () => {
   return (
-    <div className="hmarquee">
+    <div className="hmarquee relative">
+      {/* Left fade */}
+      <div className="absolute top-0 left-0 bottom-0 w-24 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+      {/* Right fade */}
+      <div className="absolute top-0 right-0 bottom-0 w-24 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
       <div className="hm-track">
         {[...images, ...images].map((img, i) => (
           <div key={i} className="hm-thumb">
