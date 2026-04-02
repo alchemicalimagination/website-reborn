@@ -15,7 +15,7 @@ const ImageMarquee = () => {
       {/* Right fade */}
       <div className="absolute top-0 right-0 bottom-0 w-24 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
       <div className="hm-track">
-        {[...images, ...images].map((img, i) => (
+        {[...images, ...images, ...images, ...images].map((img, i) => (
           <div key={i} className="hm-thumb">
             <img src={img} alt="" loading="lazy" />
             <div className="hm-play">
