@@ -4,10 +4,12 @@ import card3 from "@/assets/card-3.png";
 import card4 from "@/assets/card-4.png";
 
 const projects = [
-  { name: "Brand Alchemy", cat: "Brand Identity", img: card1 },
-  { name: "Visual Echo", cat: "Motion Design", img: card2 },
-  { name: "Nature Lens", cat: "Photography", img: card3 },
-  { name: "Golden Hour", cat: "Cinematography", img: card4 },
+  { name: "UGC", cat: "Content", img: card1 },
+  { name: "CGI", cat: "Visual", img: card2 },
+  { name: "Cinematic Ads", cat: "Campaign", img: card3 },
+  { name: "ASMR", cat: "Sensory", img: card4 },
+  { name: "FOOH", cat: "Fake Out Of Home", img: card1 },
+  { name: "Real Estate", cat: "Timelapse", img: card2 },
 ];
 
 const ProjectsSection = () => {
@@ -25,7 +27,7 @@ const ProjectsSection = () => {
               <div className="font-mono text-[8px] sm:text-[9px] tracking-[0.22em] text-primary-foreground/45 uppercase mb-1.5 sm:mb-2">{p.cat}</div>
               <div className="font-mono text-[18px] sm:text-[22px] font-bold text-primary-foreground uppercase mb-3 sm:mb-4">{p.name}</div>
               <button className="py-1.5 sm:py-2 px-4 sm:px-5 border-[1.5px] border-primary-foreground/30 rounded-full font-mono text-[9px] sm:text-[10px] text-primary-foreground tracking-[0.08em] bg-transparent cursor-pointer uppercase">
-                View Project →
+                Explore More +
               </button>
             </div>
           </div>

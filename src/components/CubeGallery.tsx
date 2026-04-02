@@ -4,24 +4,22 @@ import cube2 from "@/assets/cube-2.jpg";
 import cube3 from "@/assets/cube-3.jpg";
 import cube4 from "@/assets/cube-4.jpg";
 
-const NAMES = ["STUDIO", "UGC", "CGI", "CINEMATIC ADS", "FOOH", "ASMR", "REAL ESTATE"];
+const NAMES = ["STUDIO", "UGC", "CGI", "CINEMATIC", "ASMR", "LET'S GO"];
 const STOPS = [
-  { rx: 90, ry: 0 },       // top – STUDIO
-  { rx: 0, ry: 0 },        // front – UGC
-  { rx: 0, ry: -90 },      // right – CGI
-  { rx: 0, ry: -180 },     // back – CINEMATIC ADS
-  { rx: 0, ry: -270 },     // left – FOOH
-  { rx: 0, ry: -360 },     // front again – ASMR
-  { rx: -90, ry: -360 },   // bottom – REAL ESTATE
+  { rx: 90, ry: 0 },
+  { rx: 0, ry: 0 },
+  { rx: 0, ry: -90 },
+  { rx: 0, ry: -180 },
+  { rx: 0, ry: -270 },
+  { rx: -90, ry: -360 },
 ];
 const CARDS = [
   { tag: "Our Studio", title: "Creative\nHub", body: "A space where imagination meets execution.", side: "left" },
-  { tag: "Content", title: "User\nGenerated", body: "Authentic content that resonates with audiences.", side: "right" },
-  { tag: "Visual", title: "Digital\nCraft", body: "Pushing boundaries with 3D and visual effects.", side: "left" },
-  { tag: "Campaign", title: "Cinematic\nAds", body: "Cinematic storytelling that captivates.", side: "right" },
-  { tag: "Fake Out Of Home", title: "FOOH\nContent", body: "Viral illusions blending CGI with real-world environments.", side: "left" },
-  { tag: "Sensory", title: "ASMR\nExperience", body: "Immersive audio-visual experiences.", side: "right" },
-  { tag: "Architecture", title: "Real Estate\nTimelapse", body: "Captivating building project timelapses from start to finish.", side: "left" },
+  { tag: "UGC", title: "User\nGenerated", body: "Authentic content that resonates with audiences.", side: "right" },
+  { tag: "CGI", title: "Digital\nCraft", body: "Pushing boundaries with 3D and visual effects.", side: "left" },
+  { tag: "Cinematic", title: "Film\nMaking", body: "Cinematic storytelling that captivates.", side: "right" },
+  { tag: "ASMR", title: "Sensory\nContent", body: "Immersive audio-visual experiences.", side: "left" },
+  { tag: "Let's Go", title: "Start\nYour Project", body: "Ready to create something extraordinary?", side: "right" },
 ];
 const images = [cube1, cube2, cube3, cube4, cube1, cube2];
 
@@ -46,7 +44,7 @@ const CubeGallery = () => {
 
   useEffect(() => {
     let raf: number;
-    const N = 7;
+    const N = 6;
 
     const frame = () => {
       raf = requestAnimationFrame(frame);
@@ -86,13 +84,13 @@ const CubeGallery = () => {
     if (!outer) return;
     const sH = outer.offsetHeight - window.innerHeight;
     const sT = outer.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({ top: sT + (idx / 6) * sH, behavior: "smooth" });
+    window.scrollTo({ top: sT + (idx / 5) * sH, behavior: "smooth" });
   };
 
   const cubeSize = "min(50vw, 50vh, 460px)";
 
   return (
-    <div ref={outerRef} className="relative" style={{ height: "700vh" }}>
+    <div ref={outerRef} className="relative" style={{ height: "600vh" }}>
       <div className="sticky top-[19px] w-full overflow-hidden bg-cream flex items-center justify-center mx-auto" style={{ perspective: "1100px", borderRadius: "60px", height: "calc(100vh - 38px)", maxWidth: "calc(100vw - 20px)" }}>
         {/* HUD */}
         <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-10 text-right font-mono text-[0.6rem] sm:text-[0.65rem] tracking-[0.15em] text-foreground/35 uppercase">
