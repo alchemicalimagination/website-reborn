@@ -165,7 +165,7 @@
   animation: scrollVertical 18s linear infinite;
 }
 .hm-thumb-v {
-  width: clamp(220px, 26vw, 340px);
+  width: clamp(180px, 20vw, 280px);
   height: clamp(90px, 11vw, 132px);
   border-radius: 9999px;
   flex-shrink: 0;
