@@ -7,11 +7,11 @@ const AboutSection = () => {
       <div className="absolute inset-0 bg-[rgba(60,80,70,0.15)]" />
       <div className="relative z-[2] grid grid-cols-1 md:grid-cols-[280px_1fr_320px] items-center h-full p-6 sm:p-8 md:p-[52px] md:h-[88vh] md:min-h-[520px]">
         {/* Left glass card */}
-        <div className="glass-card rounded-3xl sm:rounded-[36px] p-8 sm:p-[44px_38px]">
+        <div className="glass-card rounded-3xl sm:rounded-[36px] p-8 sm:p-[44px_38px] flex flex-col items-center justify-center text-center">
           <span className="font-mono text-[10px] tracking-[0.2em] text-primary-foreground/55 uppercase block mb-4">
             About Us.25
           </span>
-          <h2 className="font-mono text-[clamp(40px,6vw,72px)] font-semibold text-primary-foreground uppercase leading-[0.95]">
+          <h2 className="font-mono text-[clamp(40px,6vw,72px)] font-medium text-primary-foreground uppercase leading-[0.95]">
             ABOUT
           </h2>
         </div>
