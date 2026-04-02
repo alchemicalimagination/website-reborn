@@ -33,7 +33,7 @@ const HeroSection = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover object-top"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(50,80,65,0.5)] to-transparent z-[1]" />
+      
       <div className="absolute bottom-8 left-6 sm:bottom-[40px] sm:left-[36px] md:bottom-[60px] md:left-[52px] z-[5]">
         <h1 className="font-mono text-[clamp(28px,8vw,80px)] font-bold text-primary-foreground uppercase leading-none mb-2 md:mb-3.5 drop-shadow-lg">
           Alchemical<br />Imagination<br />Studio
