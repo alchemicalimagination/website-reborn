@@ -11,7 +11,7 @@ const AboutSection = () => {
           <span className="font-mono text-[10px] tracking-[0.2em] text-primary-foreground/55 uppercase block mb-4">
             About Us.25
           </span>
-          <h2 className="font-mono text-[clamp(48px,8vw,90px)] font-bold text-primary-foreground uppercase leading-[0.95]">
+          <h2 className="font-mono text-[clamp(40px,6vw,72px)] font-semibold text-primary-foreground uppercase leading-[0.95]">
             ABOUT
           </h2>
         </div>
