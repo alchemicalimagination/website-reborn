@@ -125,7 +125,7 @@
 .hm-thumb {
   width: 180px;
   height: 130px;
-  border-radius: 50px;
+  border-radius: 9999px;
   flex-shrink: 0;
   overflow: hidden;
   position: relative;
