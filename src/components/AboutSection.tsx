@@ -19,7 +19,7 @@ const AboutSection = () => {
         <div />
         {/* Right text */}
         <div>
-          <p className="text-sm sm:text-[14px] leading-[1.72] text-primary-foreground/88 font-light">
+          <p className="text-sm sm:text-[14px] leading-[1.72] font-light" style={{ color: 'rgba(255,255,255,0.88)' }}>
             At Alchemical Imagination, we craft designs that don't just look stunning—they create impact. Blending creativity with strategy, we transform ideas into immersive digital experiences that captivate, engage, and convert.
           </p>
         </div>
