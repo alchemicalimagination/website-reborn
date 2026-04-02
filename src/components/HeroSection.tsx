@@ -25,12 +25,13 @@ const HeroSection = () => {
   const items = [...heroMedia, ...heroMedia];
   return (
     <section className="section-rounded relative h-[65vh] sm:h-[80vh] md:h-[92vh] min-h-[440px] md:min-h-[560px] bg-sage overflow-hidden">
-      <img
-        src={heroBg}
-        alt="Alchemical Imagination Studio"
+      <video
+        src="/videos/hero-bg.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
         className="absolute inset-0 w-full h-full object-cover object-top"
-        width={1920}
-        height={1080}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[rgba(50,80,65,0.5)] to-transparent z-[1]" />
       <div className="absolute bottom-8 left-6 sm:bottom-[40px] sm:left-[36px] md:bottom-[60px] md:left-[52px] z-[5]">

@@ -162,7 +162,7 @@
   flex-direction: column;
   gap: 20px;
   width: max-content;
-  animation: scrollVertical 18s linear infinite;
+  animation: scrollVertical 36s linear infinite;
 }
 .hm-thumb-v {
   width: clamp(150px, 17vw, 240px);
