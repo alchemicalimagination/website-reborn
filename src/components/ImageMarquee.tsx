@@ -5,19 +5,37 @@ import cube4 from "@/assets/cube-4.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 import aboutBg from "@/assets/about-bg.png";
 
-const images = [cube1, cube2, cube3, cube4, heroBg, aboutBg];
+type MediaItem = { type: "image"; src: string } | { type: "video"; src: string };
+
+const media: MediaItem[] = [
+  { type: "image", src: cube1 },
+  { type: "video", src: "/videos/video-1.mp4" },
+  { type: "image", src: cube2 },
+  { type: "video", src: "/videos/video-2.mp4" },
+  { type: "image", src: cube3 },
+  { type: "video", src: "/videos/video-3.mp4" },
+  { type: "image", src: cube4 },
+  { type: "video", src: "/videos/video-4.mp4" },
+  { type: "image", src: heroBg },
+  { type: "video", src: "/videos/video-5.mp4" },
+  { type: "image", src: aboutBg },
+  { type: "video", src: "/videos/video-6.mp4" },
+];
 
 const ImageMarquee = () => {
+  const items = [...media, ...media, ...media, ...media];
   return (
     <div className="hmarquee relative">
-      {/* Left fade */}
       <div className="absolute top-0 left-0 bottom-0 w-24 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-      {/* Right fade */}
       <div className="absolute top-0 right-0 bottom-0 w-24 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
       <div className="hm-track">
-        {[...images, ...images, ...images, ...images].map((img, i) => (
+        {items.map((item, i) => (
           <div key={i} className="hm-thumb">
-            <img src={img} alt="" loading="lazy" />
+            {item.type === "image" ? (
+              <img src={item.src} alt="" loading="lazy" />
+            ) : (
+              <video src={item.src} muted autoPlay loop playsInline className="w-full h-full object-cover" />
+            )}
             <div className="hm-play">
               <div className="hm-tri" />
             </div>

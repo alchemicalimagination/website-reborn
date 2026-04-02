@@ -5,9 +5,24 @@ import cube3 from "@/assets/cube-3.jpg";
 import cube4 from "@/assets/cube-4.jpg";
 import aboutBg from "@/assets/about-bg.png";
 
-const heroThumbs = [cube1, cube2, cube3, cube4, aboutBg];
+type MediaItem = { type: "image"; src: string } | { type: "video"; src: string };
+
+const heroMedia: MediaItem[] = [
+  { type: "image", src: cube1 },
+  { type: "video", src: "/videos/video-1.mp4" },
+  { type: "image", src: cube2 },
+  { type: "video", src: "/videos/video-2.mp4" },
+  { type: "image", src: cube3 },
+  { type: "video", src: "/videos/video-3.mp4" },
+  { type: "image", src: cube4 },
+  { type: "video", src: "/videos/video-4.mp4" },
+  { type: "image", src: aboutBg },
+  { type: "video", src: "/videos/video-5.mp4" },
+  { type: "video", src: "/videos/video-6.mp4" },
+];
 
 const HeroSection = () => {
+  const items = [...heroMedia, ...heroMedia];
   return (
     <section className="section-rounded relative h-[65vh] sm:h-[80vh] md:h-[92vh] min-h-[440px] md:min-h-[560px] bg-sage overflow-hidden">
       <img
@@ -29,9 +44,13 @@ const HeroSection = () => {
       {/* Vertical scrolling thumbnail strip — bottom right */}
       <div className="hidden md:block absolute right-[12px] bottom-[12px] z-[5] h-[300px] overflow-hidden pointer-events-none hero-vmarquee-mask">
         <div className="hero-vmarquee">
-          {[...heroThumbs, ...heroThumbs].map((img, i) => (
+          {items.map((item, i) => (
             <div key={i} className="hm-thumb-v">
-              <img src={img} alt="" loading="lazy" />
+              {item.type === "image" ? (
+                <img src={item.src} alt="" loading="lazy" />
+              ) : (
+                <video src={item.src} muted autoPlay loop playsInline className="w-full h-full object-cover" />
+              )}
               <div className="hm-play hm-play-v">
                 <div className="hm-tri" />
               </div>
