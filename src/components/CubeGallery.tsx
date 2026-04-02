@@ -164,7 +164,7 @@ const CubeGallery = () => {
                       autoPlay
                       loop
                       playsInline
-                      className="absolute object-cover rounded-[10px] sm:rounded-[14px]"
+                      className={`absolute rounded-[10px] sm:rounded-[14px] ${i === 2 ? "object-contain" : "object-cover"}`}
                       style={{
                         inset: "16px",
                         width: "calc(100% - 32px)",
