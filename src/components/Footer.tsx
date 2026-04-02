@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-dark section-rounded text-primary-foreground min-h-[calc(100vh-1rem)] flex flex-col justify-between p-8 sm:p-12 md:p-[60px_64px_20px]">
+    <footer className="bg-dark section-rounded text-primary-foreground min-h-[calc(100vh-1rem)] flex flex-col justify-between p-8 sm:p-12 md:p-[40px_64px_0px]">
       {/* Top content */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.2fr_1fr_0.8fr] gap-10 md:gap-12 pt-8 sm:pt-12">
         {/* Left column */}
