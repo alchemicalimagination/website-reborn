@@ -6,7 +6,7 @@ const ContactSection = () => {
       <img src={contactBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" />
       <div className="absolute inset-0 bg-foreground/40" />
       <div className="relative z-[2] text-center max-w-[680px] w-full px-5 sm:px-10 py-12 sm:py-20">
-        <h2 className="font-mono text-[clamp(32px,10vw,90px)] font-bold text-primary-foreground uppercase mb-3 sm:mb-4 tracking-[0.02em]">
+        <h2 className="font-mono text-[clamp(32px,10vw,90px)] font-medium text-primary-foreground uppercase mb-3 sm:mb-4 tracking-[0.02em] whitespace-nowrap">
           Get In Touch
         </h2>
         <p className="text-xs sm:text-sm text-primary-foreground/60 mb-6 sm:mb-8 font-light leading-relaxed">
