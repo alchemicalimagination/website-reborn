@@ -12,7 +12,7 @@ const ContactSection = () => {
         <p className="text-xs sm:text-sm text-primary-foreground/60 mb-6 sm:mb-8 font-light leading-relaxed">
           Have a project in mind? We're here to bring your vision to life.
         </p>
-        <div className="glass-form rounded-[18px] sm:rounded-[22px] p-6 sm:p-11 text-left">
+        <div className="glass-form rounded-[28px] sm:rounded-[36px] p-6 sm:p-11 text-left">
           <span className="font-mono text-[9px] tracking-[0.2em] text-primary-foreground/40 uppercase block mb-3 sm:mb-4">
             Contact Us
           </span>
