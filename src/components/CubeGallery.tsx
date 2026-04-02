@@ -147,8 +147,11 @@ const CubeGallery = () => {
               return (
                 <div
                   key={face}
-                  className="absolute inset-0 overflow-hidden backface-hidden bg-[#ede8e0]"
-                  style={{ transform: transforms[face] }}
+                  className="absolute inset-0 overflow-hidden backface-hidden"
+                  style={{
+                    transform: transforms[face],
+                    background: "linear-gradient(to right, #d5d0c8, #ede8e0 40%, #f5f2ed)",
+                  }}
                 >
                   {images[i] && (
                     <img
@@ -159,7 +162,7 @@ const CubeGallery = () => {
                         inset: "16px",
                         width: "calc(100% - 32px)",
                         height: "calc(100% - 32px)",
-                        boxShadow: "0 20px 50px -12px rgba(0,0,0,0.4), 0 8px 20px -8px rgba(0,0,0,0.2)",
+                        boxShadow: "-18px 14px 40px rgba(0,0,0,0.35), -6px 6px 16px rgba(0,0,0,0.15)",
                       }}
                       loading="lazy"
                     />
