@@ -164,11 +164,11 @@ const CubeGallery = () => {
                       autoPlay
                       loop
                       playsInline
-                      className="absolute object-cover rounded-[10px] sm:rounded-[14px]"
+                      className={`absolute rounded-[10px] sm:rounded-[14px] ${i === 2 ? "object-contain" : "object-cover"}`}
                       style={{
-                        inset: "16px",
-                        width: "calc(100% - 32px)",
-                        height: "calc(100% - 32px)",
+                        ...(i === 2
+                          ? { top: "16px", bottom: "16px", left: "50%", transform: "translateX(-50%)", height: "calc(100% - 32px)", width: "auto" }
+                          : { inset: "16px", width: "calc(100% - 32px)", height: "calc(100% - 32px)" }),
                         boxShadow: "-18px 14px 40px rgba(0,0,0,0.35), -6px 6px 16px rgba(0,0,0,0.15)",
                       }}
                     />
