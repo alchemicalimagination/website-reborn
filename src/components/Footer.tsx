@@ -54,7 +54,7 @@ const Footer = () => {
 
       {/* Bottom - Large text + copyright */}
       <div className="mt-auto">
-        <div className="font-mono text-[clamp(28px,7vw,90px)] font-bold text-primary-foreground uppercase border-t border-primary-foreground/10 pt-8 sm:pt-10 mb-4 tracking-[0.04em] leading-[1.05]">
+        <div className="font-mono text-[clamp(28px,5.5vw,90px)] font-medium text-primary-foreground uppercase border-t border-primary-foreground/10 pt-8 sm:pt-10 mb-4 tracking-[0.04em] leading-[1.05] whitespace-nowrap">
           Alchemical Imagination Studio
         </div>
         <p className="font-mono text-[10px] sm:text-[11px] text-primary-foreground/25 text-center">
