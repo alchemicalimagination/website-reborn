@@ -9,7 +9,7 @@ const heroThumbs = [cube1, cube2, cube3, cube4, aboutBg];
 
 const HeroSection = () => {
   return (
-    <section className="section-rounded relative h-[60vh] sm:h-[75vh] md:h-[88vh] min-h-[400px] md:min-h-[520px] bg-sage overflow-hidden">
+    <section className="section-rounded relative h-[65vh] sm:h-[80vh] md:h-[92vh] min-h-[440px] md:min-h-[560px] bg-sage overflow-hidden">
       <img
         src={heroBg}
         alt="Alchemical Imagination Studio"
