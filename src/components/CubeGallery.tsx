@@ -44,7 +44,7 @@ const CubeGallery = () => {
 
   useEffect(() => {
     let raf: number;
-    const N = 7;
+    const N = 6;
 
     const frame = () => {
       raf = requestAnimationFrame(frame);
