@@ -115,7 +115,7 @@ const CubeGallery = () => {
         </div>
 
         {/* Caption */}
-        <div className="absolute bottom-[140px] sm:bottom-[160px] left-1/2 -translate-x-1/2 z-10 text-center pointer-events-none">
+        <div className="absolute top-8 sm:top-12 left-1/2 -translate-x-1/2 z-10 text-center pointer-events-none">
           <div className="text-[0.5rem] sm:text-[0.58rem] tracking-[0.28em] text-gold uppercase mb-0.5">
             {String(activeIdx + 1).padStart(2, "0")}
           </div>
