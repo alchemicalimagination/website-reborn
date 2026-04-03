@@ -1,7 +1,9 @@
+import { useState } from "react";
 import card1 from "@/assets/card-1.png";
 import card2 from "@/assets/card-2.png";
 import card3 from "@/assets/card-3.png";
 import card4 from "@/assets/card-4.png";
+import ProjectModal from "./ProjectModal";
 
 const projects = [
   { name: "UGC", cat: "Content", img: card1 },
@@ -13,6 +15,8 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+
   return (
     <section id="projects" className="py-4">
       <div className="flex gap-2.5 sm:gap-3.5 overflow-x-auto scrollbar-hide px-1 pb-1" style={{ scrollbarWidth: 'none' }}>
@@ -26,13 +30,22 @@ const ProjectsSection = () => {
             <div className="absolute bottom-5 sm:bottom-[26px] left-4 right-4 sm:left-[22px] sm:right-[22px] bg-[rgba(18,14,10,0.76)] backdrop-blur-[18px] rounded-[14px] sm:rounded-[18px] p-[18px_20px] sm:p-[22px_24px] border border-primary-foreground/[0.07]">
               <div className="font-mono text-[8px] sm:text-[9px] tracking-[0.22em] text-primary-foreground/45 uppercase mb-1.5 sm:mb-2">{p.cat}</div>
               <div className="font-mono text-[18px] sm:text-[22px] font-bold text-primary-foreground uppercase mb-3 sm:mb-4">{p.name}</div>
-              <button className="py-1.5 sm:py-2 px-4 sm:px-5 border-[1.5px] border-primary-foreground/30 rounded-full font-mono text-[9px] sm:text-[10px] text-primary-foreground tracking-[0.08em] bg-transparent cursor-pointer uppercase">
+              <button
+                onClick={() => setSelectedProject(p)}
+                className="py-1.5 sm:py-2 px-4 sm:px-5 border-[1.5px] border-primary-foreground/30 rounded-full font-mono text-[9px] sm:text-[10px] text-primary-foreground tracking-[0.08em] bg-transparent cursor-pointer uppercase hover:border-primary-foreground/60 transition-colors"
+              >
                 Explore More +
               </button>
             </div>
           </div>
         ))}
       </div>
+
+      <ProjectModal
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+        project={selectedProject}
+      />
     </section>
   );
 };
