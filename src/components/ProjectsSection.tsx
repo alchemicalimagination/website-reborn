@@ -18,7 +18,7 @@ const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <section id="projects" className="py-4">
+    <section ref={ref} id="projects" className="py-4">
       <div className="flex gap-2.5 sm:gap-3.5 overflow-x-auto scrollbar-hide px-1 pb-1" style={{ scrollbarWidth: 'none' }}>
         {projects.map((p, i) => (
           <div
