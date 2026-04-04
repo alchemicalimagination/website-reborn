@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import card1 from "@/assets/card-1.png";
 import card2 from "@/assets/card-2.png";
@@ -101,10 +102,10 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
     works: [],
   };
 
-  return (
+  return createPortal(
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center animate-in fade-in duration-300"
+      className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center animate-in fade-in duration-300"
       onClick={(e) => {
         if (e.target === overlayRef.current) onClose();
       }}
@@ -175,7 +176,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           </div>
 
           {/* Horizontal scroll works */}
-          <div className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide px-6 sm:px-10 pb-8" style={{ scrollbarWidth: "none" }}>
+          <div className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide px-6 sm:px-10 pb-24 sm:pb-32" style={{ scrollbarWidth: "none" }}>
             {details.works.map((work, i) => (
               <div
                 key={i}
@@ -187,9 +188,9 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                     alt={work.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/20" />
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <div className="font-mono text-[10px] sm:text-[11px] text-primary-foreground/80 uppercase">
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/10 to-transparent opacity-80" />
+                  <div className="absolute top-4 left-4 right-4">
+                    <div className="font-mono text-[10px] sm:text-[11px] text-primary-foreground/90 uppercase font-medium tracking-wide">
                       {work.title}
                     </div>
                   </div>
@@ -199,7 +200,8 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
