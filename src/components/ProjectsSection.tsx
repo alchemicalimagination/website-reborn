@@ -15,6 +15,7 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const ref = useScrollReveal<HTMLElement>();
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
