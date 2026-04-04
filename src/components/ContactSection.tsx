@@ -1,8 +1,11 @@
 import contactBg from "@/assets/contact-bg.png";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ContactSection = () => {
+  const ref = useScrollReveal<HTMLElement>();
+
   return (
-    <section id="contact" className="section-rounded relative h-auto min-h-[480px] sm:min-h-[520px] md:h-[88vh] flex items-center justify-center overflow-hidden">
+    <section ref={ref} id="contact" className="section-rounded relative h-auto min-h-[480px] sm:min-h-[520px] md:h-[88vh] flex items-center justify-center overflow-hidden">
       <img src={contactBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" />
       <div className="absolute inset-0 bg-foreground/40" />
       <div className="relative z-[2] text-center max-w-[680px] w-full px-5 sm:px-10 py-12 sm:py-20">
@@ -17,14 +20,14 @@ const ContactSection = () => {
             Contact Us
           </span>
           <input
-            className="glass-input w-full rounded-[12px] sm:rounded-[14px] py-3.5 sm:py-[18px] px-4 sm:px-5 text-xs sm:text-sm text-primary-foreground outline-none mb-3 sm:mb-4 placeholder:text-primary-foreground/30"
+            className="glass-input w-full rounded-[12px] sm:rounded-[14px] py-3.5 sm:py-[18px] px-4 sm:px-5 text-xs sm:text-sm text-primary-foreground outline-none mb-3 sm:mb-4 placeholder:text-primary-foreground/30 transition-all duration-300 focus:border-primary-foreground/50 focus:bg-[rgba(255,255,255,0.18)]"
             placeholder="Name"
           />
           <input
-            className="glass-input w-full rounded-[12px] sm:rounded-[14px] py-3.5 sm:py-[18px] px-4 sm:px-5 text-xs sm:text-sm text-primary-foreground outline-none mb-4 sm:mb-6 placeholder:text-primary-foreground/30"
+            className="glass-input w-full rounded-[12px] sm:rounded-[14px] py-3.5 sm:py-[18px] px-4 sm:px-5 text-xs sm:text-sm text-primary-foreground outline-none mb-4 sm:mb-6 placeholder:text-primary-foreground/30 transition-all duration-300 focus:border-primary-foreground/50 focus:bg-[rgba(255,255,255,0.18)]"
             placeholder="Email"
           />
-          <button className="mt-1 sm:mt-2 bg-primary-foreground/15 border-[1.5px] border-primary-foreground/30 rounded-full py-3 sm:py-4 px-7 sm:px-10 font-mono text-[10px] sm:text-xs text-primary-foreground tracking-[0.12em] cursor-pointer uppercase">
+          <button className="mt-1 sm:mt-2 bg-primary-foreground/15 border-[1.5px] border-primary-foreground/30 rounded-full py-3 sm:py-4 px-7 sm:px-10 font-mono text-[10px] sm:text-xs text-primary-foreground tracking-[0.12em] cursor-pointer uppercase transition-all duration-300 hover:bg-primary-foreground/25 hover:border-primary-foreground/50 hover:scale-105">
             Send Message
           </button>
         </div>
