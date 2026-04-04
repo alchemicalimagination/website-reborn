@@ -26,7 +26,7 @@ const ProjectsSection = () => {
             key={i}
             className="flex-shrink-0 w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[32px] sm:rounded-[40px] overflow-hidden relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] group"
           >
-            <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
             <div className="absolute inset-0 bg-black/20" />
             <div className="absolute bottom-5 sm:bottom-[26px] left-4 right-4 sm:left-[22px] sm:right-[22px] bg-[rgba(18,14,10,0.76)] backdrop-blur-[18px] rounded-[14px] sm:rounded-[18px] p-[18px_20px] sm:p-[22px_24px] border border-primary-foreground/[0.07]">
               <div className="font-mono text-[8px] sm:text-[9px] tracking-[0.22em] text-primary-foreground/45 uppercase mb-1.5 sm:mb-2">{p.cat}</div>
