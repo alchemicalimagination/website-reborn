@@ -4,12 +4,13 @@ import card1 from "@/assets/card-1.png";
 import card2 from "@/assets/card-2.png";
 import card3 from "@/assets/card-3.png";
 import card4 from "@/assets/card-4.png";
+import ugc1 from "@/assets/ugc1.mp4";
 import ProjectModal from "./ProjectModal";
 
 const projects = [
-  { name: "UGC", cat: "Content", img: card1 },
+  { name: "UGC", cat: "Content", img: card1, video: ugc1 },
   { name: "CGI", cat: "Visual", img: card2 },
-  { name: "Cinematic Ads", cat: "Campaign", img: card3 },
+  { name: "Cinematic Ads", cat: "Campaign", img: card3, video: "/videos/social_iacomet_static_shot_of_a_bus_stop_in_a_Japanese_city_ultra-cl_9f2996c7-5d1f-495d-b710-53130bd77818_2.mp4" },
   { name: "ASMR", cat: "Sensory", img: card4 },
   { name: "FOOH", cat: "Fake Out Of Home", img: card1 },
   { name: "Real Estate", cat: "Timelapse", img: card2 },
@@ -25,9 +26,20 @@ const ProjectsSection = () => {
         {projects.map((p, i) => (
           <div
             key={i}
-            className="flex-shrink-0 w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[32px] sm:rounded-[40px] overflow-hidden relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] group"
+            className="flex-shrink-0 w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] lg:w-[400px] lg:h-[520px] rounded-[32px] sm:rounded-[40px] overflow-hidden relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] group"
           >
-            <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+            {p.video ? (
+              <video 
+                src={p.video} 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 object-center" 
+                autoPlay 
+                muted 
+                loop 
+                playsInline 
+              />
+            ) : (
+              <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+            )}
             <div className="absolute inset-0 bg-black/20" />
             <div className="absolute bottom-5 sm:bottom-[26px] left-4 right-4 sm:left-[22px] sm:right-[22px] bg-[rgba(18,14,10,0.76)] backdrop-blur-[18px] rounded-[14px] sm:rounded-[18px] p-[18px_20px] sm:p-[22px_24px] border border-primary-foreground/[0.07]">
               <div className="font-mono text-[8px] sm:text-[9px] tracking-[0.22em] text-primary-foreground/45 uppercase mb-1.5 sm:mb-2">{p.cat}</div>

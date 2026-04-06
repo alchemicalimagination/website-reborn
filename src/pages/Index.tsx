@@ -24,8 +24,8 @@ const Index = () => {
         <AboutSection />
         <ImageMarquee />
         <CubeGallery />
-        <ProjectsSection />
         <ServicesSection />
+        <ProjectsSection />
         <ContactSection />
         <Footer />
       </div>

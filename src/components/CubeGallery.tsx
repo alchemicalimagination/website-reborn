@@ -95,7 +95,7 @@ const CubeGallery = () => {
 
   return (
     <div ref={outerRef} className="relative" style={{ height: "600vh" }}>
-      <div className="sticky top-[19px] w-full overflow-hidden bg-cream flex items-center justify-center mx-auto" style={{ perspective: "1100px", borderRadius: "60px", height: "calc(100vh - 38px)", maxWidth: "calc(100vw - 20px)" }}>
+      <div className="sticky top-[40px] md:top-[19px] w-full overflow-hidden bg-cream flex items-center justify-center mx-auto h-[calc(100vh-80px)] md:h-[calc(100vh-38px)] rounded-[40px] md:rounded-[60px]" style={{ perspective: "1100px", maxWidth: "calc(100vw - 20px)" }}>
         {/* HUD */}
         <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-10 text-right font-mono text-[0.6rem] sm:text-[0.65rem] tracking-[0.15em] text-foreground/35 uppercase">
           <div>{String(progress).padStart(3, "0")}%</div>

@@ -34,7 +34,7 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover object-top"
       />
       
-      <div className="absolute bottom-8 left-6 sm:bottom-[40px] sm:left-[36px] md:bottom-[60px] md:left-[52px] z-[5]">
+      <div className="absolute bottom-8 left-6 sm:bottom-[40px] sm:left-[36px] md:bottom-[60px] md:left-[52px] lg:bottom-[80px] lg:left-[72px] z-[5]">
         <h1 className="font-mono text-[clamp(28px,8vw,80px)] font-bold text-primary-foreground uppercase leading-none mb-2 md:mb-3.5 drop-shadow-lg">
           Alchemical<br />Imagination<br />Studio
         </h1>
@@ -43,7 +43,7 @@ const HeroSection = () => {
         </p>
       </div>
       {/* Vertical scrolling thumbnail strip — bottom right */}
-      <div className="hidden md:block absolute right-[12px] bottom-[12px] z-[5] h-[300px] overflow-hidden pointer-events-none hero-vmarquee-mask">
+      <div className="hidden md:block absolute right-[12px] bottom-[12px] z-[5] h-[300px] lg:h-[400px] lg:w-[200px] overflow-hidden pointer-events-none hero-vmarquee-mask">
         <div className="hero-vmarquee">
           {items.map((item, i) => (
             <div key={i} className="hm-thumb-v">
