@@ -48,12 +48,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mt-auto pt-12 pb-24 sm:pb-28 md:pb-10">
-        <div className="font-mono text-[clamp(18px,6.5vw,80px)] font-medium text-primary-foreground uppercase mb-6 tracking-[0.04em] leading-[1.2] text-center w-full">
-          <span>ALCHEMICAL IMAGINATION</span><br />
-          <span>STUDIO</span>
+      <div className="mt-auto pt-12 pb-24 sm:pb-28 md:pb-4 md:pt-0">
+        <div className="font-mono text-[clamp(18px,6.5vw,80px)] md:text-[clamp(24px,4.8vw,80px)] font-medium text-primary-foreground uppercase mb-6 tracking-[0.04em] leading-[1.2] md:leading-[1.1] text-center md:text-left w-full whitespace-normal md:whitespace-nowrap" style={{ paddingBottom: '40px' }}>
+          <span className="md:hidden">ALCHEMICAL IMAGINATION<br />STUDIO</span>
+          <span className="hidden md:inline">ALCHEMICAL IMAGINATION STUDIO</span>
         </div>
-        <p className="font-mono text-[10px] sm:text-[11px] text-primary-foreground/25 text-center mb-2">
+        <p className="font-mono text-[10px] sm:text-[11px] text-primary-foreground/25 text-center md:text-left mb-2">
           © 2026 Alchemical Imagination Studio. All rights reserved.
         </p>
       </div>

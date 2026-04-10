@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import card1 from "@/assets/card-1.png";
@@ -19,15 +19,16 @@ interface ProjectModalProps {
   } | null;
 }
 
-const projectDetails: Record<string, { description: string; works: { img: string; title: string, video?: string }[] }> = {
-  UGC: {
+const projectDetails: Record<string, { description: string; works: { img: string; title: string, video?: string, explanation?: string }[] }> = {
+  "AI UGC": {
     description:
-      "User-Generated Content is one of the most powerful tools in modern marketing. We craft authentic, relatable content that speaks directly to your audience. Our UGC campaigns blend real voices with strategic storytelling to drive engagement and trust.",
+      "Synthetic Content is one of the most powerful tools in modern marketing. We craft authentic, relatable high-fidelity AI-generated content that speaks directly to your audience. Our AI UGC campaigns blend real voices with strategic storytelling to drive engagement and trust.",
     works: [
-      { img: card1, title: "Brand Campaign" },
-      { img: card2, title: "Product Review", video: ugc1 },
+      { img: card1, title: "Brand Campaign", video: "/videos/hf_20260405_194312_dc83932d-a100-4fed-ba5b-a7f1933d1107.mp4" },
+      { img: card2, title: "Product Review", video: "/videos/202604100949.mp4" },
       { img: card3, title: "Lifestyle Content" },
-      { img: card4, title: "Testimonial" },
+      { img: card4, title: "Testimonial", video: ugc1 },
+      { img: card1, title: "AI Persona", video: "/videos/hf_20260408_195451_92c4f893-a256-428c-98b3-3ddc06dbb2fe.mp4", explanation: "We build bespoke, hyper-realistic digital avatars tailored to your brand identity." },
     ],
   },
   CGI: {
@@ -36,7 +37,7 @@ const projectDetails: Record<string, { description: string; works: { img: string
     works: [
       { img: card2, title: "Product Render" },
       { img: card3, title: "Environment Design" },
-      { img: card1, title: "Character Animation" },
+      { img: card1, title: "Character Animation", video: "/videos/iacomet_Animal_full_body_front_view_high_definition_cute_fair_72131a06-9954-426c-b674-447b54d58e11_1.mp4" },
       { img: card4, title: "Motion Graphics" },
     ],
   },
@@ -80,6 +81,65 @@ const projectDetails: Record<string, { description: string; works: { img: string
       { img: card3, title: "Neighbourhood Guide" },
     ],
   },
+};
+
+const WorkCard = ({ work }: { work: { img: string; title: string; video?: string; explanation?: string } }) => {
+  const [flipped, setFlipped] = useState(false);
+
+  return (
+    <div
+      className="flex-shrink-0 w-[200px] sm:w-[240px] rounded-[16px] sm:rounded-[20px] overflow-visible perspective-[1000px] cursor-pointer"
+      onClick={() => setFlipped(!flipped)}
+    >
+      <div 
+        className="relative w-full aspect-[3/4] transition-all duration-700 rounded-[16px] sm:rounded-[20px]"
+        style={{ transformStyle: "preserve-3d", transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
+      >
+        {/* FRONT */}
+        <div 
+          className="absolute inset-0 rounded-[16px] sm:rounded-[20px] overflow-hidden"
+          style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
+        >
+          {work.video ? (
+            <video
+              src={work.video}
+              poster={work.img}
+              className="absolute inset-0 w-full h-full object-cover object-center z-0"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          ) : (
+            <img
+              src={work.img}
+              alt={work.title}
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/10 to-transparent opacity-80 z-10" style={{ transform: "translateZ(1px)" }} />
+          <div className="absolute top-4 left-4 right-4 z-20" style={{ transform: "translateZ(2px)" }}>
+            <div className="font-mono text-[10px] sm:text-[11px] text-primary-foreground/90 uppercase font-medium tracking-wide shadow-sm">
+              {work.title}
+            </div>
+          </div>
+        </div>
+
+        {/* BACK */}
+        <div 
+          className="absolute inset-0 rounded-[16px] sm:rounded-[20px] overflow-hidden bg-dark flex flex-col p-5 sm:p-6 items-center justify-center text-center border border-primary-foreground/[0.08]"
+          style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", transform: "rotateY(180deg)", background: "linear-gradient(135deg, rgba(30,27,24,0.97) 0%, rgba(18,14,10,0.99) 100%)" }}
+        >
+          <div className="font-mono text-[10px] tracking-[0.2em] text-primary-foreground/45 uppercase mb-4">
+            {work.title}
+          </div>
+          <p className="text-[12px] sm:text-[14px] text-primary-foreground/80 font-light leading-[1.7]">
+            {work.explanation || `Discover our bespoke solutions for ${work.title}, crafted perfectly for modern campaigns.`}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
@@ -139,6 +199,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
             {project.video ? (
               <video
                 src={project.video}
+                poster={project.img}
                 className="w-full h-full object-cover"
                 autoPlay
                 muted
@@ -191,35 +252,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           {/* Horizontal scroll works */}
           <div className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide px-6 sm:px-10 pb-24 sm:pb-32" style={{ scrollbarWidth: "none" }}>
             {details.works.map((work, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-[200px] sm:w-[240px] rounded-[16px] sm:rounded-[20px] overflow-hidden"
-              >
-                <div className="relative aspect-[3/4]">
-                  {work.video ? (
-                    <video
-                      src={work.video}
-                      className="w-full h-full object-cover object-center"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    />
-                  ) : (
-                    <img
-                      src={work.img}
-                      alt={work.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/10 to-transparent opacity-80" />
-                  <div className="absolute top-4 left-4 right-4">
-                    <div className="font-mono text-[10px] sm:text-[11px] text-primary-foreground/90 uppercase font-medium tracking-wide">
-                      {work.title}
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <WorkCard key={i} work={work} />
             ))}
           </div>
         </div>

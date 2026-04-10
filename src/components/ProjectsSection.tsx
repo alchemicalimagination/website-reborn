@@ -8,7 +8,7 @@ import ugc1 from "@/assets/ugc1.mp4";
 import ProjectModal from "./ProjectModal";
 
 const projects = [
-  { name: "UGC", cat: "Content", img: card1, video: ugc1 },
+  { name: "AI UGC", cat: "Synthetic", img: card1, video: ugc1 },
   { name: "CGI", cat: "Visual", img: card2 },
   { name: "Cinematic Ads", cat: "Campaign", img: card3, video: "/videos/social_iacomet_static_shot_of_a_bus_stop_in_a_Japanese_city_ultra-cl_9f2996c7-5d1f-495d-b710-53130bd77818_2.mp4" },
   { name: "ASMR", cat: "Sensory", img: card4 },
@@ -31,6 +31,7 @@ const ProjectsSection = () => {
             {p.video ? (
               <video 
                 src={p.video} 
+                poster={p.img}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 object-center" 
                 autoPlay 
                 muted 

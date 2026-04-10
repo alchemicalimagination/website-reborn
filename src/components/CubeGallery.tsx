@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 
 
-const NAMES = ["STUDIO", "UGC", "CGI", "CINEMATIC", "ASMR", "LET'S GO"];
+const NAMES = ["STUDIO", "AI UGC", "CGI", "CINEMATIC", "ASMR", "LET'S GO"];
 const STOPS = [
   { rx: 90, ry: 0 },
   { rx: 0, ry: 0 },
@@ -12,7 +12,7 @@ const STOPS = [
 ];
 const CARDS = [
   { tag: "Our Studio", title: "Creative\nHub", body: "A space where imagination meets execution.", side: "left" },
-  { tag: "UGC", title: "User\nGenerated", body: "Authentic content that resonates with audiences.", side: "right" },
+  { tag: "Synthetic", title: "AI\nGenerated", body: "Authentic synthetic content that resonates with audiences.", side: "right" },
   { tag: "CGI", title: "Digital\nCraft", body: "Pushing boundaries with 3D and visual effects.", side: "left" },
   { tag: "Cinematic", title: "Film\nMaking", body: "Cinematic storytelling that captivates.", side: "right" },
   { tag: "ASMR", title: "Sensory\nContent", body: "Immersive audio-visual experiences.", side: "left" },
