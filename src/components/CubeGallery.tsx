@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 
 
-const NAMES = ["STUDIO", "AI UGC", "CGI", "CINEMATIC", "ASMR", "LET'S GO"];
+const NAMES = ["BRAND", "AI UGC", "CGI", "CINEMATIC", "ASMR", "LET'S GO"];
 const STOPS = [
   { rx: 90, ry: 0 },
   { rx: 0, ry: 0 },
@@ -11,7 +11,7 @@ const STOPS = [
   { rx: -90, ry: -360 },
 ];
 const CARDS = [
-  { tag: "Our Studio", title: "Creative\nHub", body: "A space where imagination meets execution.", side: "left" },
+  { tag: "Brand", title: "Product\nDemo", body: "A space where imagination meets execution.", side: "left" },
   { tag: "Synthetic", title: "AI\nGenerated", body: "Authentic synthetic content that resonates with audiences.", side: "right" },
   { tag: "CGI", title: "Digital\nCraft", body: "Pushing boundaries with 3D and visual effects.", side: "left" },
   { tag: "Cinematic", title: "Film\nMaking", body: "Cinematic storytelling that captivates.", side: "right" },
@@ -23,7 +23,7 @@ const videos = [
   "/videos/video-2.mp4",
   "/videos/video-3.mp4",
   "/videos/video-4.mp4",
-  "/videos/video-5.mp4",
+  "/videos/202604101911.mp4",
   "/videos/video-6.mp4",
 ];
 
@@ -154,7 +154,7 @@ const CubeGallery = () => {
                   className="absolute inset-0 overflow-hidden backface-hidden"
                   style={{
                     transform: transforms[face],
-                    background: "linear-gradient(to right, #d5d0c8, #ede8e0 40%, #f5f2ed)",
+                    background: "linear-gradient(to right, #d0cbc3, #eae6df 40%, #ece8e2)",
                   }}
                 >
                   {videos[i] && (
@@ -164,9 +164,9 @@ const CubeGallery = () => {
                       autoPlay
                       loop
                       playsInline
-                      className={`absolute rounded-[10px] sm:rounded-[14px] ${i === 2 ? "object-contain" : "object-cover"}`}
+                      className={`absolute rounded-[10px] sm:rounded-[14px] ${i === 2 || i === 4 ? "object-contain" : "object-cover"}`}
                       style={{
-                        ...(i === 2
+                        ...(i === 2 || i === 4
                           ? { top: "16px", bottom: "16px", left: "50%", transform: "translateX(-50%)", height: "calc(100% - 32px)", width: "auto" }
                           : { inset: "16px", width: "calc(100% - 32px)", height: "calc(100% - 32px)" }),
                         boxShadow: "-18px 14px 40px rgba(0,0,0,0.35), -6px 6px 16px rgba(0,0,0,0.15)",

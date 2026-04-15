@@ -39,7 +39,7 @@ const HeroSection = () => {
           Alchemical<br />Imagination<br />Studio
         </h1>
         <p className="font-mono text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.28em] text-primary-foreground/70 uppercase">
-          Design Studio · London
+          We don't just design. We create impact. We transform.
         </p>
       </div>
       {/* Vertical scrolling thumbnail strip — bottom right */}

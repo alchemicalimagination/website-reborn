@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="font-mono text-[11px] sm:text-[12px] tracking-[0.18em] text-primary-foreground font-bold uppercase mb-6">
             Stay Connected.
           </div>
-          <a href="mailto:info@alchemicalimagination.com" className="font-mono text-[12px] sm:text-[13px] text-primary-foreground uppercase no-underline block mb-8 tracking-[0.06em] transition-colors duration-300 hover:text-accent">
+          <a href="mailto:info@alchemicalimagination.com" className="font-mono text-[12px] sm:text-[13px] text-primary-foreground uppercase no-underline block mb-8 tracking-[0.06em] transition-colors duration-300 hover:text-[#a78bfa]">
             INFO@ALCHEMICALIMAGINATION.COM
           </a>
           <p className="text-[13px] sm:text-[14px] leading-[1.75] text-primary-foreground/45 font-light mb-10 max-w-[420px]">
@@ -30,7 +30,7 @@ const Footer = () => {
               { label: "Contact us", sup: "" },
             ].map((item) => (
               <li key={item.label}>
-                <a href="#" className="font-mono text-[22px] sm:text-[26px] md:text-[28px] text-primary-foreground no-underline py-1 block font-normal tracking-[0.01em] transition-all duration-300 hover:translate-x-2 hover:text-accent">
+                <a href="#" className="font-mono text-[22px] sm:text-[26px] md:text-[28px] text-primary-foreground no-underline py-1 block font-normal tracking-[0.01em] transition-all duration-300 hover:translate-x-2 hover:text-[#a78bfa]">
                   {item.label}
                   {item.sup && <sup className="text-[10px] text-primary-foreground/40 ml-0.5">{item.sup}</sup>}
                 </a>
