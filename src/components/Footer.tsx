@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="font-mono text-[11px] sm:text-[12px] tracking-[0.18em] text-primary-foreground font-bold uppercase mb-6">
             Stay Connected.
           </div>
-          <a href="mailto:info@alchemicalimagination.com" className="font-mono text-[12px] sm:text-[13px] text-primary-foreground uppercase no-underline block mb-8 tracking-[0.06em] transition-colors duration-300 hover:text-[#a78bfa]">
+          <a href="mailto:info@alchemicalimagination.com" className="font-mono text-[12px] sm:text-[13px] text-primary-foreground uppercase no-underline block mb-8 tracking-[0.06em] transition-colors duration-300 hover:text-[#7c3aed]">
             INFO@ALCHEMICALIMAGINATION.COM
           </a>
           <p className="text-[13px] sm:text-[14px] leading-[1.75] text-primary-foreground/45 font-light mb-10 max-w-[420px]">
@@ -24,15 +24,14 @@ const Footer = () => {
         <div className="flex justify-between md:justify-around w-full max-w-[320px] md:max-w-none mt-6 md:mt-0">
           <ul className="list-none flex flex-col gap-2">
             {[
-              { label: "Home", sup: "" },
-              { label: "About", sup: "" },
-              { label: "Services", sup: "" },
-              { label: "Contact us", sup: "" },
+              { label: "Home", href: "#" },
+              { label: "About", href: "#about" },
+              { label: "Services", href: "#services" },
+              { label: "Contact us", href: "#contact" },
             ].map((item) => (
               <li key={item.label}>
-                <a href="#" className="font-mono text-[22px] sm:text-[26px] md:text-[28px] text-primary-foreground no-underline py-1 block font-normal tracking-[0.01em] transition-all duration-300 hover:translate-x-2 hover:text-[#a78bfa]">
+                <a href={item.href} className="font-mono text-[22px] sm:text-[26px] md:text-[28px] text-primary-foreground no-underline py-1 block font-normal tracking-[0.01em] transition-all duration-300 hover:translate-x-2 hover:text-[#7c3aed]">
                   {item.label}
-                  {item.sup && <sup className="text-[10px] text-primary-foreground/40 ml-0.5">{item.sup}</sup>}
                 </a>
               </li>
             ))}

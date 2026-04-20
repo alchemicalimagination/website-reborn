@@ -19,66 +19,72 @@ interface ProjectModalProps {
   } | null;
 }
 
-const projectDetails: Record<string, { description: string; works: { img: string; title: string, video?: string, explanation?: string }[] }> = {
+const projectDetails: Record<string, { description: string; quote: string; works: { img: string; title: string, video?: string, explanation?: string }[] }> = {
   "AI UGC": {
     description:
-      "Synthetic Content is one of the most powerful tools in modern marketing. We craft authentic, relatable high-fidelity AI-generated content that speaks directly to your audience. Our AI UGC campaigns blend real voices with strategic storytelling to drive engagement and trust.",
+      "AI UGC is the future of authentic marketing. We generate hyper-realistic, AI-powered user-generated content — real voices, real faces, real stories — built entirely with artificial intelligence. Our campaigns speak your audience's language, driving trust and engagement at scale without the cost of traditional production.",
+    quote: "\"AI doesn't replace authenticity — it amplifies it.\"",
     works: [
       { img: card1, title: "Brand Campaign", video: "/videos/hf_20260405_194312_dc83932d-a100-4fed-ba5b-a7f1933d1107.mp4" },
       { img: card2, title: "Product Review", video: "/videos/202604100949.mp4" },
       { img: card3, title: "Lifestyle Content" },
       { img: card4, title: "Testimonial", video: ugc1 },
-      { img: card1, title: "AI Persona", video: "/videos/hf_20260408_195451_92c4f893-a256-428c-98b3-3ddc06dbb2fe.mp4", explanation: "We build bespoke, hyper-realistic digital avatars tailored to your brand identity." },
+      { img: card1, title: "AI Persona", video: "/videos/hf_20260408_195451_92c4f893-a256-428c-98b3-3ddc06dbb2fe.mp4", explanation: "We build bespoke, hyper-realistic AI digital avatars tailored to your brand identity." },
     ],
   },
   CGI: {
     description:
-      "Computer-Generated Imagery pushes the boundaries of visual storytelling. We create hyper-realistic 3D renders, product visualizations, and impossible scenarios that captivate audiences and elevate your brand beyond the ordinary.",
+      "Our AI CGI service creates breathtaking, photorealistic visuals that would be impossible — or prohibitively expensive — with traditional methods. Powered entirely by artificial intelligence, we generate stunning 3D environments, product renders, and visual worlds that blur the line between the real and the imagined.",
+    quote: "\"We build worlds that exist only in imagination — and in your feed.\"",
     works: [
-      { img: card2, title: "Product Render" },
-      { img: card3, title: "Environment Design" },
-      { img: card1, title: "Character Animation", video: "/videos/iacomet_Animal_full_body_front_view_high_definition_cute_fair_72131a06-9954-426c-b674-447b54d58e11_1.mp4" },
-      { img: card4, title: "Motion Graphics" },
+      { img: card2, title: "AI Product Render" },
+      { img: card3, title: "AI Environment Design" },
+      { img: card1, title: "AI Character Animation", video: "/videos/iacomet_Animal_full_body_front_view_high_definition_cute_fair_72131a06-9954-426c-b674-447b54d58e11_1.mp4" },
+      { img: card4, title: "AI Motion Graphics" },
     ],
   },
   "Cinematic Ads": {
     description:
-      "Our cinematic advertising combines film-grade production with strategic messaging. Every frame is crafted to evoke emotion, build narrative, and drive action — transforming your brand story into an unforgettable visual experience.",
+      "We produce AI-generated cinematic ads that rival Hollywood-grade productions — without the budget. From script to final cut, every element is crafted with artificial intelligence: AI actors, AI environments, AI cinematography. The result is film-quality storytelling that moves audiences and converts viewers into loyal customers.",
+    quote: "\"Cinema-quality storytelling, reimagined for the AI era.\"",
     works: [
-      { img: card3, title: "Brand Film" },
-      { img: card4, title: "Commercial Spot" },
-      { img: card1, title: "Documentary Style" },
-      { img: card2, title: "Social Campaign" },
+      { img: card3, title: "AI Brand Film" },
+      { img: card4, title: "AI Commercial Spot" },
+      { img: card1, title: "AI Documentary Style" },
+      { img: card2, title: "AI Social Campaign" },
     ],
   },
   ASMR: {
     description:
-      "ASMR content creates an intimate, sensory connection with your audience. We produce carefully designed audio-visual experiences that trigger relaxation and engagement — a unique way to make your brand memorable through sound and texture.",
+      "AI ASMR is the most intimate form of brand storytelling. We use artificial intelligence to generate hyper-detailed sensory content — whisper-close soundscapes, texture-rich visuals, and immersive product experiences — that make your brand something people don't just see, but feel.",
+    quote: "\"The most powerful content doesn't shout — it whispers.\"",
     works: [
-      { img: card4, title: "Product Unboxing" },
-      { img: card1, title: "Texture Close-ups" },
-      { img: card2, title: "Sound Design" },
-      { img: card3, title: "Whisper Campaign" },
+      { img: card4, title: "AI Product Unboxing" },
+      { img: card1, title: "AI Texture Close-ups" },
+      { img: card2, title: "AI Sound Design" },
+      { img: card3, title: "AI Whisper Campaign" },
     ],
   },
   FOOH: {
     description:
-      "Fake Out Of Home advertising blends CGI with real-world footage to create viral, jaw-dropping content. These impossible billboards and installations generate massive organic reach and position your brand at the forefront of creative innovation.",
+      "AI FOOH blends artificial intelligence with real-world footage to create jaw-dropping viral moments. Imagine your product appearing on the side of the Eiffel Tower, falling from the sky over Times Square, or wrapping entire city blocks — all generated with AI and designed to go viral and earn massive organic reach for your brand.",
+    quote: "\"Make the impossible visible. Make the impossible shareable.\"",
     works: [
-      { img: card1, title: "Giant Installation" },
-      { img: card3, title: "Street Takeover" },
-      { img: card2, title: "Building Wrap" },
-      { img: card4, title: "Transport Media" },
+      { img: card1, title: "AI Giant Installation" },
+      { img: card3, title: "AI Street Takeover" },
+      { img: card2, title: "AI Building Wrap" },
+      { img: card4, title: "AI Viral Moment" },
     ],
   },
   "Real Estate": {
     description:
-      "Our real estate timelapse and visual content transforms property marketing. From construction progress documentation to stunning architectural showcases, we help developers and agents present properties in their most compelling light.",
+      "AI is transforming property marketing. We generate photorealistic AI renders of unbuilt properties, AI-powered virtual tours, and cinematic AI walkthroughs that help developers and agents sell properties before a single brick is laid. Present your projects in their most compelling, immersive light — entirely with AI.",
+    quote: "\"Sell the dream before the build. AI makes it real.\"",
     works: [
-      { img: card2, title: "Construction Timelapse" },
-      { img: card4, title: "Aerial Showcase" },
-      { img: card1, title: "Interior Tour" },
-      { img: card3, title: "Neighbourhood Guide" },
+      { img: card2, title: "AI Interior Render" },
+      { img: card4, title: "AI Aerial Showcase" },
+      { img: card1, title: "AI Virtual Tour" },
+      { img: card3, title: "AI Architectural Visualisation" },
     ],
   },
 };
@@ -160,7 +166,8 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
   if (!isOpen || !project) return null;
 
   const details = projectDetails[project.name] || {
-    description: "Explore our creative work in this category.",
+    description: "Explore our creative AI work in this category.",
+    quote: "\"Every project is a new canvas — we bring imagination to life.\"",
     works: [],
   };
 
@@ -227,19 +234,13 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
             <p className="text-[14px] sm:text-[16px] leading-[1.7] text-primary-foreground/60 mb-4">
               {details.description}
             </p>
-            <p className="text-[14px] sm:text-[16px] leading-[1.7] text-primary-foreground/60 mb-10">
-              Our approach combines creative vision with data-driven strategy,
-              ensuring every piece of content not only looks stunning but
-              delivers measurable results for your brand.
-            </p>
-
             {/* Divider */}
-            <div className="w-1 h-16 bg-accent rounded-full mb-6" />
+            <div className="w-1 h-16 rounded-full mb-6" style={{ background: "#7c3aed" }} />
 
             <blockquote className="text-[20px] sm:text-[24px] font-medium leading-[1.4] text-primary-foreground/90 mb-2 pl-5 border-l-0">
-              "Every project is a new canvas — we bring imagination to life."
+              {details.quote}
             </blockquote>
-            <p className="text-accent text-[13px] sm:text-[14px] font-medium mb-12 pl-5">
+            <p className="text-[13px] sm:text-[14px] font-medium mb-12 pl-5" style={{ color: "#7c3aed" }}>
               Alchemical Imagination Studio
             </p>
 
