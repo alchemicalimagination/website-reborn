@@ -11,9 +11,9 @@ const projects = [
   { name: "AI UGC", cat: "Synthetic", img: card1, video: ugc1 },
   { name: "CGI", cat: "Visual", img: card2 },
   { name: "Cinematic Ads", cat: "Campaign", img: card3, video: "/videos/social_iacomet_static_shot_of_a_bus_stop_in_a_Japanese_city_ultra-cl_9f2996c7-5d1f-495d-b710-53130bd77818_2.mp4" },
-  { name: "ASMR", cat: "Sensory", img: card4 },
   { name: "FOOH", cat: "Fake Out Of Home", img: card1 },
-  { name: "Real Estate", cat: "Timelapse", img: card2 },
+  { name: "E-Commerce", cat: "AI UGC + CGI", img: card4 },
+  { name: "PROPERTY & INTERIORS", cat: "Architectural", img: card2 },
 ];
 
 const ProjectsSection = () => {

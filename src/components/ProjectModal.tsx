@@ -45,24 +45,13 @@ const projectDetails: Record<string, { description: string; quote: string; works
   },
   "Cinematic Ads": {
     description:
-      "We produce AI-generated cinematic ads that rival Hollywood-grade productions — without the budget. From script to final cut, every element is crafted with artificial intelligence: AI actors, AI environments, AI cinematography. The result is film-quality storytelling that moves audiences and converts viewers into loyal customers.",
+      "We produce AI-generated cinematic ads that rival Hollywood-grade productions — without the budget. From script to final cut, every element is crafted with artificial intelligence: AI actors, AI environments, AI cinematography. Our cinematic work also embraces immersive ASMR storytelling — whisper-close soundscapes and sensory-rich visuals — to create ads that audiences don't just watch, but feel.",
     quote: "\"Cinema-quality storytelling, reimagined for the AI era.\"",
     works: [
       { img: card3, title: "AI Brand Film" },
       { img: card4, title: "AI Commercial Spot" },
-      { img: card1, title: "AI Documentary Style" },
+      { img: card1, title: "AI ASMR Ad", explanation: "Immersive sensory storytelling — whisper-close AI audio-visuals that make your brand unforgettable." },
       { img: card2, title: "AI Social Campaign" },
-    ],
-  },
-  ASMR: {
-    description:
-      "AI ASMR is the most intimate form of brand storytelling. We use artificial intelligence to generate hyper-detailed sensory content — whisper-close soundscapes, texture-rich visuals, and immersive product experiences — that make your brand something people don't just see, but feel.",
-    quote: "\"The most powerful content doesn't shout — it whispers.\"",
-    works: [
-      { img: card4, title: "AI Product Unboxing" },
-      { img: card1, title: "AI Texture Close-ups" },
-      { img: card2, title: "AI Sound Design" },
-      { img: card3, title: "AI Whisper Campaign" },
     ],
   },
   FOOH: {
@@ -76,15 +65,26 @@ const projectDetails: Record<string, { description: string; quote: string; works
       { img: card4, title: "AI Viral Moment" },
     ],
   },
-  "Real Estate": {
+  "E-Commerce": {
     description:
-      "AI is transforming property marketing. We generate photorealistic AI renders of unbuilt properties, AI-powered virtual tours, and cinematic AI walkthroughs that help developers and agents sell properties before a single brick is laid. Present your projects in their most compelling, immersive light — entirely with AI.",
+      "We combine the power of AI UGC and AI CGI to create e-commerce content that converts. From hyper-realistic AI product renders and 360° visualisations, to authentic AI-generated review videos and lifestyle campaigns — every asset is built to stop the scroll, build trust, and drive purchase at scale.",
+    quote: "\"Product content that doesn't just look good — it sells.\"",
+    works: [
+      { img: card1, title: "AI Product UGC", video: "/videos/202604100949.mp4" },
+      { img: card2, title: "AI Product Render" },
+      { img: card3, title: "AI Lifestyle Campaign" },
+      { img: card4, title: "AI Review Video", video: ugc1 },
+    ],
+  },
+  "PROPERTY & INTERIORS": {
+    description:
+      "AI is transforming property and interior marketing. We generate photorealistic AI renders of unbuilt properties, AI-powered virtual tours, and cinematic AI walkthroughs — including home decor styling, interior design visualisation, day/night lighting transitions, and construction timelapse. Help developers, agents and designers sell the vision before a single brick is laid.",
     quote: "\"Sell the dream before the build. AI makes it real.\"",
     works: [
       { img: card2, title: "AI Interior Render" },
-      { img: card4, title: "AI Aerial Showcase" },
       { img: card1, title: "AI Virtual Tour" },
-      { img: card3, title: "AI Architectural Visualisation" },
+      { img: card3, title: "AI Construction Timelapse" },
+      { img: card4, title: "AI Architectural Visualisation" },
     ],
   },
 };
