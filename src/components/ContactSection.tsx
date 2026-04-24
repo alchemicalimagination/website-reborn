@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
 
-const EMAILJS_SERVICE_ID = "service_xm8i6qh";
+const EMAILJS_SERVICE_ID = "service_wo5xq3m";
 const EMAILJS_TEMPLATE_ID = "template_7vs3csw";
 const EMAILJS_PUBLIC_KEY = "RihG6e1wQgyByrnjm";
 
