@@ -1,9 +1,14 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import contactBg from "@/assets/contact-bg.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
+
+const EMAILJS_SERVICE_ID = "service_xm8i6qh";
+const EMAILJS_TEMPLATE_ID = "template_7vs3csw";
+const EMAILJS_PUBLIC_KEY = "RihG6e1wQgyByrnjm";
 
 const ContactSection = () => {
   const ref = useScrollReveal<HTMLElement>();
@@ -11,6 +16,7 @@ const ContactSection = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const handleOpenModal = () => {
     if (!name.trim() || !email.trim()) {
@@ -20,23 +26,38 @@ const ContactSection = () => {
     setIsModalOpen(true);
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!message.trim()) {
       toast.error("Please enter a message before submitting.");
       return;
     }
 
-    // Simulate sending message to backend
-    console.log("Sending message:", { name, email, message });
-    
-    setTimeout(() => {
-      toast.success("Message sent successfully! We'll get back to you soon.");
+    setIsSending(true);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: name,
+          name,
+          email,
+          message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      toast.success("Message sent! We'll be in touch soon. 🎉");
       setIsModalOpen(false);
       setName("");
       setEmail("");
       setMessage("");
-    }, 600);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast.error("Something went wrong. Please try again or email us directly.");
+    } finally {
+      setIsSending(false);
+    }
   };
+
 
   return (
     <section ref={ref} id="contact" className="section-rounded relative h-auto min-h-[480px] sm:min-h-[520px] md:h-[88vh] flex items-center justify-center overflow-hidden">
@@ -96,9 +117,10 @@ const ContactSection = () => {
           <div className="mt-6 flex justify-end">
             <button 
               onClick={handleSendMessage}
-              className="bg-primary-foreground text-dark rounded-full py-3 px-8 font-mono text-xs font-bold tracking-[0.12em] cursor-pointer uppercase transition-all duration-300 hover:bg-primary-foreground/90 hover:scale-105"
+              disabled={isSending}
+              className="bg-primary-foreground text-dark rounded-full py-3 px-8 font-mono text-xs font-bold tracking-[0.12em] cursor-pointer uppercase transition-all duration-300 hover:bg-primary-foreground/90 hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
             >
-              Submit
+              {isSending ? "Sending…" : "Submit"}
             </button>
           </div>
         </DialogContent>
