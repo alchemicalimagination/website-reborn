@@ -74,6 +74,9 @@ const projectDetails: Record<string, { description: string; quote: string; works
       { img: card2, title: "AI Product Render" },
       { img: card3, title: "AI Lifestyle Campaign" },
       { img: card4, title: "AI Review Video", video: ugc1 },
+      { img: card2, title: "AI Environment Design" },
+      { img: card1, title: "AI Character Animation", video: "/videos/iacomet_Animal_full_body_front_view_high_definition_cute_fair_72131a06-9954-426c-b674-447b54d58e11_1.mp4", explanation: "AI-generated character and creature animation for product storytelling and brand campaigns." },
+      { img: card4, title: "AI Motion Graphics" },
     ],
   },
   "PROPERTY & INTERIORS": {
