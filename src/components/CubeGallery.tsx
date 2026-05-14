@@ -179,19 +179,23 @@ const CubeGallery = () => {
           </div>
         </div>
 
-        {/* Cards - hidden on small mobile, shown from sm up */}
+        {/* Cards */}
         {CARDS.map((card, i) => (
           <div
             key={i}
-            className={`absolute max-w-[16rem] sm:max-w-[22rem] p-4 sm:p-[2rem_1.75rem] cg-card-glass rounded-3xl sm:rounded-[36px] z-[5] transition-all duration-500 hidden sm:block ${
-              card.side === "right" ? "right-4 sm:right-12 left-auto text-right" : "left-4 sm:left-12"
-            } ${activeIdx === i ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"}`}
-            style={{ top: "50%", transform: activeIdx === i ? "translateY(-50%)" : "translateY(calc(-50% + 16px))" }}
+            className={`absolute p-5 sm:p-[2rem_1.75rem] cg-card-glass rounded-[24px] sm:rounded-[36px] z-[5] transition-all duration-500 
+              bottom-6 sm:bottom-auto sm:top-1/2 w-[calc(100%-2rem)] left-4 sm:w-auto sm:max-w-[22rem]
+              ${
+                card.side === "right" 
+                  ? "sm:right-12 sm:left-auto text-center sm:text-right" 
+                  : "sm:left-12 sm:right-auto text-center sm:text-left"
+              } 
+              ${activeIdx === i ? "opacity-100 translate-y-0 sm:-translate-y-1/2 pointer-events-auto" : "opacity-0 translate-y-4 sm:translate-y-[calc(-50%+16px)] pointer-events-none"}`}
           >
-            <div className={`w-10 sm:w-12 h-px bg-gold mb-3 sm:mb-4 ${card.side === "right" ? "ml-auto" : ""}`} />
-            <div className="font-mono text-[0.55rem] sm:text-[0.6rem] tracking-[0.25em] uppercase text-gold mb-3 sm:mb-4">{card.tag}</div>
-            <div className="font-mono text-[clamp(1.4rem,3vw,3rem)] font-medium leading-[0.9] text-dark mb-3 sm:mb-4 whitespace-pre-line">{card.title}</div>
-            <p className="text-[0.7rem] sm:text-[0.78rem] leading-[1.75] text-foreground/60">{card.body}</p>
+            <div className={`w-10 sm:w-12 h-px bg-gold mb-3 sm:mb-4 mx-auto sm:mx-0 ${card.side === "right" ? "sm:ml-auto" : ""}`} />
+            <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-gold mb-2 sm:mb-4">{card.tag}</div>
+            <div className="font-mono text-[clamp(1.6rem,3vw,3rem)] font-medium leading-[0.9] text-dark mb-2 sm:mb-4 whitespace-pre-line">{card.title}</div>
+            <p className="text-[0.75rem] sm:text-[0.78rem] leading-[1.6] sm:leading-[1.75] text-foreground/60">{card.body}</p>
           </div>
         ))}
       </div>

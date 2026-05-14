@@ -20,12 +20,12 @@ const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <section ref={ref} id="projects" className="py-4">
-      <div className="flex gap-2.5 sm:gap-3.5 overflow-x-auto scrollbar-hide px-1 pb-1" style={{ scrollbarWidth: 'none' }}>
+    <section ref={ref} id="projects" className="py-8 sm:py-12">
+      <div className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-6 sm:px-12 pb-8" style={{ scrollbarWidth: 'none' }}>
         {projects.map((p, i) => (
           <div
             key={i}
-            className="flex-shrink-0 w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] lg:w-[400px] lg:h-[520px] rounded-[32px] sm:rounded-[40px] overflow-hidden relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] group"
+            className="flex-shrink-0 snap-center w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] lg:w-[400px] lg:h-[520px] rounded-[32px] sm:rounded-[40px] overflow-hidden relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] group"
           >
             {p.video ? (
               <video 

@@ -30,25 +30,23 @@ const AboutSection = () => {
       `}</style>
 
       {/* ── MOBILE layout (hidden on md+) ── */}
-      <div className="md:hidden flex flex-col">
-        <div className="relative h-[70vw] min-h-[300px] max-h-[460px] overflow-hidden">
-          <img src={aboutBg} alt="About us" className="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" />
-          <div className="absolute inset-0 bg-[rgba(60,80,70,0.15)]" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="glass-card rounded-3xl p-6 flex flex-col items-center justify-center text-center aspect-square w-[200px]">
-              <h2 className="font-mono text-[clamp(28px,7vw,48px)] font-medium text-primary-foreground uppercase leading-[0.95]">
-                ABOUT US
-              </h2>
-            </div>
+      <div className="md:hidden relative min-h-[500px] flex flex-col py-16 px-5 justify-center">
+        <img src={aboutBg} alt="About us" className="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex flex-col gap-6 items-center w-full">
+          <div className="glass-card rounded-3xl p-6 flex flex-col items-center justify-center text-center aspect-square w-[200px]">
+            <h2 className="font-mono text-[clamp(28px,7vw,48px)] font-medium text-primary-foreground uppercase leading-[0.95]">
+              ABOUT US
+            </h2>
           </div>
-        </div>
-        <div className="bg-[rgba(45,58,50,0.97)] px-6 py-10">
-          <h3 className="font-mono text-[clamp(20px,5vw,28px)] font-medium text-primary-foreground uppercase leading-[1.1] mb-5" style={{ color: 'rgba(255,255,255,0.95)' }}>
-            We turn impossible<br />into possible
-          </h3>
-          <p className="text-[14px] leading-[1.75] font-light" style={{ color: 'rgba(255,255,255,0.80)' }}>
-            Alchemical Imagination Studio is a London-based AI creative agency specialising in AI craft. We combine generative AI with deep creative direction to produce imagery and video that feels human, considered, and brand-true at a fraction of the time and cost of traditional production.
-          </p>
+          <div className="glass-card rounded-3xl p-6 w-full">
+            <h3 className="font-mono text-[clamp(18px,5vw,24px)] font-medium text-primary-foreground uppercase leading-[1.2] mb-3" style={{ color: 'rgba(255,255,255,0.95)' }}>
+              We turn impossible<br />into possible
+            </h3>
+            <p className="text-[13px] leading-[1.65] font-light" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              Alchemical Imagination Studio is a London-based AI creative agency specialising in AI craft. We combine generative AI with deep creative direction to produce imagery and video that feels human, considered, and brand-true at a fraction of the time and cost of traditional production.
+            </p>
+          </div>
         </div>
       </div>
 
