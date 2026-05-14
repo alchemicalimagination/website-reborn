@@ -4,7 +4,7 @@ const Footer = () => {
   const ref = useScrollReveal<HTMLElement>();
 
   return (
-    <footer ref={ref} className="bg-dark section-rounded text-primary-foreground min-h-[calc(100vh-2rem)] flex flex-col justify-between p-8 sm:p-12 md:p-[60px_64px_20px]">
+    <footer ref={ref} className="bg-dark section-rounded text-primary-foreground flex flex-col justify-between p-8 sm:p-12 md:p-[60px_64px_20px]">
       <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-10 md:gap-12 pt-8 sm:pt-12">
         <div>
           <div className="font-mono text-[11px] sm:text-[12px] tracking-[0.18em] text-primary-foreground font-bold uppercase mb-6">
@@ -13,12 +13,6 @@ const Footer = () => {
           <a href="mailto:info@alchemicalimagination.com" className="font-mono text-[12px] sm:text-[13px] text-primary-foreground uppercase no-underline block mb-8 tracking-[0.06em] transition-colors duration-300 hover:text-[#7c3aed]">
             INFO@ALCHEMICALIMAGINATION.COM
           </a>
-          <p className="text-[13px] sm:text-[14px] leading-[1.75] text-primary-foreground/45 font-light mb-10 max-w-[420px]">
-            At Alchemical Imagination Studio, we break boundaries to craft designs that stand out and deliver results. We blend creativity with strategy, turning bold ideas into digital experiences that captivate and inspire.
-          </p>
-          <div className="font-mono text-[11px] sm:text-[12px] text-primary-foreground/30">
-            Made with Love by Alchemical Imagination Studio.
-          </div>
         </div>
 
         <div className="flex justify-between md:justify-around w-full max-w-[320px] md:max-w-none mt-6 md:mt-0">
