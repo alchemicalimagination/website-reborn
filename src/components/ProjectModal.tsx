@@ -6,6 +6,7 @@ import card2 from "@/assets/card-2.png";
 import card3 from "@/assets/card-3.png";
 import card4 from "@/assets/card-4.png";
 import ugc1 from "@/assets/ugc1.mp4";
+import { BackgroundVideo } from "./ui/BackgroundVideo";
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -110,16 +111,11 @@ const WorkCard = ({ work }: { work: { img: string; title: string; video?: string
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
           {work.video ? (
-            <video
+            <BackgroundVideo
               src={work.video}
               poster={work.img}
-              className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
-              autoPlay
-              muted
-              loop
-              playsInline
-              disablePictureInPicture
-              disableRemotePlayback
+              className="absolute inset-0 w-full h-full z-0"
+              videoClassName="object-cover object-center"
             />
           ) : (
             <img
@@ -209,16 +205,11 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           {/* Hero image */}
           <div className="relative w-full h-[240px] sm:h-[320px]">
             {project.video ? (
-              <video
+              <BackgroundVideo
                 src={project.video}
                 poster={project.img}
-                className="w-full h-full object-cover pointer-events-none"
-                autoPlay
-                muted
-                loop
-                playsInline
-                disablePictureInPicture
-                disableRemotePlayback
+                className="absolute inset-0 w-full h-full"
+                videoClassName="object-cover"
               />
             ) : (
               <img

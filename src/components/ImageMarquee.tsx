@@ -4,6 +4,7 @@ import cube3 from "@/assets/cube-3.jpg";
 import cube4 from "@/assets/cube-4.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 import aboutBg from "@/assets/about-bg.png";
+import { BackgroundVideo } from "./ui/BackgroundVideo";
 
 type MediaItem = { type: "image"; src: string } | { type: "video"; src: string };
 
@@ -34,7 +35,7 @@ const ImageMarquee = () => {
             {item.type === "image" ? (
               <img src={item.src} alt="" loading="lazy" />
             ) : (
-              <video src={item.src} muted autoPlay loop playsInline disablePictureInPicture disableRemotePlayback className="w-full h-full object-cover pointer-events-none" />
+              <BackgroundVideo src={item.src} className="w-full h-full" videoClassName="object-cover" />
             )}
           </div>
         ))}

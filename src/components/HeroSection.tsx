@@ -4,6 +4,7 @@ import cube2 from "@/assets/cube-2.jpg";
 import cube3 from "@/assets/cube-3.jpg";
 import cube4 from "@/assets/cube-4.jpg";
 import aboutBg from "@/assets/about-bg.png";
+import { BackgroundVideo } from "./ui/BackgroundVideo";
 
 type MediaItem = { type: "image"; src: string } | { type: "video"; src: string };
 
@@ -25,15 +26,10 @@ const HeroSection = () => {
   const items = [...heroMedia, ...heroMedia];
   return (
     <section className="section-rounded relative h-[65vh] sm:h-[80vh] md:h-[92vh] min-h-[440px] md:min-h-[560px] bg-sage overflow-hidden">
-      <video
+      <BackgroundVideo
         src="/videos/hero-bg.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        disablePictureInPicture
-        disableRemotePlayback
-        className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
+        className="absolute inset-0 w-full h-full"
+        videoClassName="object-cover object-top"
       />
       
       <div className="absolute bottom-8 left-6 sm:bottom-[40px] sm:left-[36px] md:bottom-[60px] md:left-[52px] lg:bottom-[80px] lg:left-[72px] z-[5]">
@@ -52,7 +48,7 @@ const HeroSection = () => {
               {item.type === "image" ? (
                 <img src={item.src} alt="" loading="lazy" />
               ) : (
-                <video src={item.src} muted autoPlay loop playsInline disablePictureInPicture disableRemotePlayback className="w-full h-full object-cover pointer-events-none" />
+                <BackgroundVideo src={item.src} className="w-full h-full" videoClassName="object-cover" />
               )}
             </div>
           ))}
