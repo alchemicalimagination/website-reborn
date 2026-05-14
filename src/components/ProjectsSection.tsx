@@ -36,6 +36,8 @@ const ProjectsSection = () => {
                 muted 
                 loop 
                 playsInline 
+                disablePictureInPicture
+                disableRemotePlayback
               />
             ) : (
               <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />

@@ -164,7 +164,9 @@ const CubeGallery = () => {
                       autoPlay
                       loop
                       playsInline
-                      className={`absolute rounded-[10px] sm:rounded-[14px] ${i === 2 || i === 4 ? "object-contain" : "object-cover"}`}
+                      disablePictureInPicture
+                      disableRemotePlayback
+                      className={`absolute rounded-[10px] sm:rounded-[14px] pointer-events-none ${i === 2 || i === 4 ? "object-contain" : "object-cover"}`}
                       style={{
                         ...(i === 2 || i === 4
                           ? { top: "16px", bottom: "16px", left: "50%", transform: "translateX(-50%)", height: "calc(100% - 32px)", width: "auto" }

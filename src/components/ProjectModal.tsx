@@ -118,6 +118,8 @@ const WorkCard = ({ work }: { work: { img: string; title: string; video?: string
               muted
               loop
               playsInline
+              disablePictureInPicture
+              disableRemotePlayback
             />
           ) : (
             <img
@@ -215,6 +217,8 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                 muted
                 loop
                 playsInline
+                disablePictureInPicture
+                disableRemotePlayback
               />
             ) : (
               <img
