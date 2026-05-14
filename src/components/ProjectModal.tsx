@@ -113,7 +113,7 @@ const WorkCard = ({ work }: { work: { img: string; title: string; video?: string
             <video
               src={work.video}
               poster={work.img}
-              className="absolute inset-0 w-full h-full object-cover object-center z-0"
+              className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
               autoPlay
               muted
               loop
@@ -210,7 +210,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
               <video
                 src={project.video}
                 poster={project.img}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover pointer-events-none"
                 autoPlay
                 muted
                 loop

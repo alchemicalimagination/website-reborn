@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mt-auto pt-8 pb-24 sm:pb-28 md:pb-4 md:pt-0">
+      <div className="mt-auto pt-8 pb-5 md:pb-4 md:pt-0">
         <div className="font-mono text-[clamp(14px,5.2vw,80px)] md:text-[clamp(24px,4.8vw,80px)] font-medium text-primary-foreground uppercase mb-6 tracking-[0.04em] leading-[1.2] md:leading-[1.1] text-center md:text-left w-full" style={{ paddingBottom: '16px' }}>
           <div className="md:hidden whitespace-nowrap">ALCHEMICAL IMAGINATION</div>
           <div className="md:hidden">STUDIO</div>

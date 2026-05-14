@@ -31,7 +31,7 @@ const HeroSection = () => {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover object-top"
+        className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
       />
       
       <div className="absolute bottom-8 left-6 sm:bottom-[40px] sm:left-[36px] md:bottom-[60px] md:left-[52px] lg:bottom-[80px] lg:left-[72px] z-[5]">
@@ -50,7 +50,7 @@ const HeroSection = () => {
               {item.type === "image" ? (
                 <img src={item.src} alt="" loading="lazy" />
               ) : (
-                <video src={item.src} muted autoPlay loop playsInline className="w-full h-full object-cover" />
+                <video src={item.src} muted autoPlay loop playsInline className="w-full h-full object-cover pointer-events-none" />
               )}
             </div>
           ))}
