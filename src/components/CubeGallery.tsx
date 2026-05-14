@@ -91,7 +91,7 @@ const CubeGallery = () => {
     window.scrollTo({ top: sT + (idx / 5) * sH, behavior: "smooth" });
   };
 
-  const cubeSize = "min(50vw, 50vh, 460px)";
+  const cubeSize = "min(80vw, 45vh, 460px)";
 
   return (
     <div ref={outerRef} className="relative" style={{ height: "600vh" }}>
@@ -129,7 +129,7 @@ const CubeGallery = () => {
         </div>
 
         {/* Cube */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ perspective: "1100px" }}>
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none pb-[20vh] sm:pb-0" style={{ perspective: "1100px" }}>
           <div
             className="relative preserve-3d"
             style={{
@@ -184,7 +184,7 @@ const CubeGallery = () => {
           <div
             key={i}
             className={`absolute p-5 sm:p-[2rem_1.75rem] cg-card-glass rounded-[24px] sm:rounded-[36px] z-[5] transition-all duration-500 
-              bottom-6 sm:bottom-auto sm:top-1/2 w-[calc(100%-2rem)] left-4 sm:w-auto sm:max-w-[22rem]
+              bottom-24 sm:bottom-auto sm:top-1/2 w-[calc(100%-2rem)] left-4 sm:w-auto sm:max-w-[22rem]
               ${
                 card.side === "right" 
                   ? "sm:right-12 sm:left-auto text-center sm:text-right" 
