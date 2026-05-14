@@ -91,7 +91,7 @@ const CubeGallery = () => {
     window.scrollTo({ top: sT + (idx / 5) * sH, behavior: "smooth" });
   };
 
-  const cubeSize = "min(80vw, 45vh, 460px)";
+  const cubeSize = "min(72vw, 45vh, 460px)";
 
   return (
     <div ref={outerRef} className="relative" style={{ height: "600vh" }}>
